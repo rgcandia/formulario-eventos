@@ -17,7 +17,7 @@ export function Index (){
         window.scrollTo(0, 0);
      },[forms])
     return(<Box sx={{display:'flex',justifyContent:'center',alignItems:'center'}}>
-        <Typography>INDEX</Typography>
+        
         {!user&&<Login/>}
        {user&&<Unlog/>}
     </Box>)
