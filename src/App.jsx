@@ -1,5 +1,5 @@
-import { useState } from 'react'
 import {  Container } from "@mui/material"
+import {Outlet} from 'react-router-dom'
 import styles from './App.module.css'
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
    maxWidth='xl'
    className={styles.container}
    >
-
+    <Outlet/>
    </Container>
   )
 }
