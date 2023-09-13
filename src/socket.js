@@ -15,3 +15,8 @@ export const initSocket = (user)=>{
         socket.emit("join", user);
       }
 }
+export const listenersocket = (email,dispatch,action)=>{
+  socket.on(email,(value)=>{
+  dispatch(action(value))
+  })
+}
