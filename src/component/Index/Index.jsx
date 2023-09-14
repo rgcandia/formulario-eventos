@@ -3,7 +3,7 @@ import {useDispatch,useSelector} from 'react-redux'
 import { initListener } from "../../services";
 import {uploadValues} from '../../redux/slice.js'
 import { listenersocket} from '../../socket.js'
-import {Outlet} from 'react-router-dom'
+// import {Outlet} from 'react-router-dom'
 import Login from "./Login/Login";
 import Unlog from "./Unlog/Unlog";
 import { useEffect } from 'react';
@@ -21,6 +21,6 @@ export default function Index (){
         
         {!user&&<Login/>}
        {user&&<Unlog/>}
-       <Outlet/>
+       {/* <Outlet/> */}
     </Box>)
 }
