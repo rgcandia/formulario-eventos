@@ -24,9 +24,15 @@ export default function Login() {
     console.log("Password:", password);
     login(usuario,password);
   };
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      // Llama a la función handleClick si se presiona Enter
+      handleClick();
+    }
+  };
 
   return (
-    <Box className={styles.login}>
+    <Box className={styles.login} >
        <Typography variant='h4' color='primary' sx={{textAlign:'center'}}>
             Login
         </Typography>
@@ -54,6 +60,7 @@ export default function Login() {
         color="primary"
         value={password}
         onChange={handlePasswordChange}
+        onKeyDown={handleKeyPress}
       />
       <Box className={styles.sendContainer}>
         <Button
@@ -61,6 +68,7 @@ export default function Login() {
         color="primary"
          onClick={handleClick}
          endIcon={<SendIcon />}
+         
          >
           Send
         </Button>
