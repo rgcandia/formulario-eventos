@@ -27,3 +27,10 @@ export const listenerForms = (dispatch,action)=>{
   })
 }
 
+
+export const createForm = (email)=>{
+
+  if(!socket) return null;
+  socket.emit("createForm",{email});
+  
+}

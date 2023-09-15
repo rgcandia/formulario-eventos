@@ -1,6 +1,6 @@
 import {  Container } from "@mui/material"
-import Index from "./component/Index/Index"
 import styles from './App.module.css'
+import { Outlet } from "react-router-dom"
 
 function App() {
 
@@ -9,7 +9,7 @@ function App() {
    maxWidth='xl'
    className={styles.container}
    >
-    <Index/>
+    <Outlet/>
    </Container>
   )
 }
