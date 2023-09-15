@@ -6,7 +6,8 @@ import {  useSelector } from "react-redux";
 import ListIcon from '@mui/icons-material/List';
 import styles from "./TableForms.module.css";
 import CreateForm from "../CreateForm/CreateForm";
-
+import { deleteFormPending } from "../../socket";
+import { alertDeleteFormPending,alertErrorDeleteFormPending } from "../../services";
 export default function TableForms({ forms }) {
  const {user} = useSelector(state=>state.data)
   useEffect(() => {
@@ -14,13 +15,13 @@ export default function TableForms({ forms }) {
     
   }, [forms]);
 const handleDelete = (id,user)=>{
-// const form = forms.find((e)=>{return e.id===id})
-//  if(form.pending){
-//   deleteFormPending(id,user)
-//   alertDeleteFormPending();
-//  }else{
-//   alertErrorDeleteFormPending();
-//  }
+const form = forms.find((e)=>{return e.id===id})
+ if(form.pending){
+  deleteFormPending(id,user)
+  alertDeleteFormPending();
+ }else{
+  alertErrorDeleteFormPending();
+ }
 
 
 }
