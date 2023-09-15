@@ -15,8 +15,14 @@ export const initSocket = (user)=>{
         socket.emit("join", user);
       }
 }
-export const listenersocket = (email,dispatch,action)=>{
+export const listenerUser = (email,dispatch,action)=>{
   socket.on(email,(value)=>{
+  dispatch(action(value))
+  })
+}
+
+export const listenerForms = (dispatch,action)=>{
+  socket.on('forms',(value)=>{
   dispatch(action(value))
   })
 }

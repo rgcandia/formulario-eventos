@@ -9,10 +9,6 @@ const router = createBrowserRouter([
       element: <App />,
       errorElement: <Error404 />,
     },
-    {
-      path:'/home',
-      element:<Index/>
-    }
   
   ]);
   

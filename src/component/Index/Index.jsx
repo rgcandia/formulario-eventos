@@ -2,7 +2,7 @@ import {Box} from '@mui/material'
 import {useDispatch,useSelector} from 'react-redux'
 import { initListener } from "../../services";
 import {uploadValues} from '../../redux/slice.js'
-import { listenersocket} from '../../socket.js'
+import { listenerForms, listenerUser} from '../../socket.js'
 // import {Outlet} from 'react-router-dom'
 import Login from "./Login/Login";
 import Unlog from "./Unlog/Unlog";
@@ -12,7 +12,8 @@ export default function Index (){
     const {user,forms} = useSelector(state=>state.data)
     useEffect(()=>{
         initListener(dispatch)
-        user?listenersocket(user,dispatch,uploadValues):null
+        user?listenerUser(user,dispatch,uploadValues):null
+        user?listenerForms(dispatch,uploadValues):null
     },[user])
     useEffect(()=>{
         window.scrollTo(0, 0);
