@@ -23,7 +23,7 @@ useEffect(()=>{
  },[forms]) 
 
   return (
-   <Box className={styles.containerForm}>
+   <Box className={styles.containerForm} sx={{paddingTop:'10%'}}>
     
     {forms&&<>
     
