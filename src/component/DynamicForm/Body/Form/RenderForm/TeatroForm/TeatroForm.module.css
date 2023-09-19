@@ -1,0 +1,40 @@
+.teatro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 16px;
+    width: 100%;
+    margin: 0;
+    
+}
+.sobreEscenario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+.bajoEscenario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.bodyTeatro{
+    width: 50%;
+}
+@media(max-width:850px){
+    .bodyTeatro{
+        width: 100%;
+        
+    }
+    .teatro{
+        padding: 0;
+    }
+  }
+
+

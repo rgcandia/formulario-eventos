@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import App from './App.jsx';
 import Error404 from './component/Error404/Error404.jsx';
 import  Index  from './component/Index/Index.jsx';
-import DashHome from "./component/DashHome/DashHome.jsx";
+import DynamicForm from './component/DynamicForm/DynamicForm.jsx';
 const router = createBrowserRouter([
     {
       path: '/',
@@ -12,6 +12,10 @@ const router = createBrowserRouter([
         {
           index:true,
           element:<Index/>
+        },
+        {
+          path:'formulario/:id',
+          element:<DynamicForm/>
         }
       ]
     },

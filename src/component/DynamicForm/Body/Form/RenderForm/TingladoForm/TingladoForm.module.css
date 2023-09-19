@@ -1,0 +1,36 @@
+.tinglado{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 16px;
+    width: 100%;
+    margin: 0;
+}
+.bodyTinglado{
+    width: 50%;
+}
+.sobreEscenario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+.bajoEscenario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+@media(max-width:850px){
+    .bodyTinglado{
+        width: 100%;
+        
+    }
+    .tinglado{
+        padding: 0;
+    }
+  }

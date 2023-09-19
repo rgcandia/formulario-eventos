@@ -10,9 +10,7 @@ const {user,forms} = useSelector(state=>state.data)
 
                                              
   return (
-    <Box className={styles.dashhome}>
-      <h1>DashHome</h1>
-    
+    <Box className={styles.dashhome}>    
       {forms&&<TableForms forms={forms}/>}
      {(!forms&&user)&&<LoaderDash/>} 
     </Box>

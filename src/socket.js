@@ -37,3 +37,7 @@ export const createForm = (email)=>{
 export const deleteFormPending = (id,user)=>{
   socket.emit('deleteFormPending',{id,user})
 }
+
+export const updateForm = ({id,form,user})=>{
+  socket.emit('updateForm',{id,form,user})
+  }

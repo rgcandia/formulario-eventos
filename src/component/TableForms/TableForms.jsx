@@ -7,6 +7,7 @@ import ListIcon from '@mui/icons-material/List';
 import styles from "./TableForms.module.css";
 import CreateForm from "../CreateForm/CreateForm";
 import { deleteFormPending } from "../../socket";
+import { Link } from "react-router-dom";
 import { alertDeleteFormPending,alertErrorDeleteFormPending } from "../../services";
 export default function TableForms({ forms }) {
  const {user} = useSelector(state=>state.data)
@@ -55,8 +56,12 @@ const form = forms.find((e)=>{return e.id===id})
                 className={form.pending ? styles.pendingRow : null}
                 >
                 <td>
-                
+                <Link
+                 to={`formulario/${form.id}`}
+                 className={styles.link}
+                >
                     {form.id}
+                </Link>
                   
                 </td>
                 <td>{form.pending ? "Yes" : "No"}</td>
