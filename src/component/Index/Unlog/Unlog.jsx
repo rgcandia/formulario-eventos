@@ -24,6 +24,16 @@ export default function Unlog(){
                     />
                     </a>
   </Box>
+          <Box sx={{display:'flex',alignItems:'end',justifyContent:'center',width:'100%'}}>
+       <Typography variant='body2'>Bienvenido : <strong>{user}</strong></Typography>
+       </Box>
+      
+       <Box sx={{display:'flex',alignItems:'center',justifyContent:'center'}}>
+       <Button variant='outlined' onClick={handleClick}>
+       <LogoutIcon sx={{color:'white'}}/>
+       <Typography sx={{color:'white'}}>logout</Typography>
+         </Button>
+       </Box>
 
       </Toolbar>
 
