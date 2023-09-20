@@ -1,16 +1,33 @@
-import { Box, Button, Typography,AppBar,Toolbar,IconButton  } from "@mui/material";
+import { 
+  Box,
+  Button,
+ Typography,
+ AppBar,
+ Toolbar,
+ IconButton ,
+ MenuItem,
+ Menu } from "@mui/material";
 import {disconect} from '../../../firebase/auth_sign_out.js'
 import { useDispatch, useSelector } from "react-redux";
 import {uploadUser} from '../../../redux/slice.js'
-import LogoutIcon from '@mui/icons-material/Logout';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import logo from '../../../images/encabezado-wellspring.png';
-
+import LogoutIcon from '@mui/icons-material/Logout';
 import styles from './Unlog.module.css'
+import { useState } from "react";
 export default function Unlog(){
+  const dispatch = useDispatch;
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
   const {user} = useSelector(state=>state.data)
-    const dispatch = useDispatch;
-  const handleClick = ()=>{
+    
+  const handleOut = ()=>{
     disconect(dispatch,uploadUser);
     location.reload()
   }
@@ -30,10 +47,31 @@ export default function Unlog(){
   <Box sx={{display:'flex'}}>
   <IconButton 
   color='secondary' 
+  onClick={handleClick}
   >
     <AccountCircleIcon className={styles.icon}/>
-   
-    </IconButton>  
+    </IconButton>
+    <Menu
+        id="demo-positioned-menu"
+        aria-labelledby="demo-positioned-button"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        anchorOrigin={{
+          vertical: 'top',
+          horizontal: 'left',
+        }}
+        transformOrigin={{
+          vertical: 'top',
+          horizontal: 'left',
+        }}
+      >
+       
+        <MenuItem onClick={handleOut}>
+        <LogoutIcon/>
+           cerrar sesión
+        </MenuItem>
+      </Menu>
   </Box>     
   </Box>
       </Toolbar>
