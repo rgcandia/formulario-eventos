@@ -9,8 +9,6 @@ import {  useSelector } from "react-redux";
 export default function DynamicForm() {
 
 const {forms} = useSelector(state=>state.data)
-
-
   useEffect(()=>{
     
     window.scrollTo(0, 0);
