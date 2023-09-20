@@ -32,7 +32,7 @@ export default function Unlog(){
   color='secondary' 
   >
     <AccountCircleIcon className={styles.icon}/>
-    <Typography className={styles.text}>{user}</Typography>
+   
     </IconButton>  
   </Box>     
   </Box>
