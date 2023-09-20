@@ -46,10 +46,12 @@ export default function Unlog(){
   <Box></Box>
   <Box sx={{display:'flex'}}>
   <IconButton 
+  sx={{flexDirection:'column'}}
   color='secondary' 
   onClick={handleClick}
   >
     <AccountCircleIcon className={styles.icon}/>
+    <Typography className={styles.textIcon}>{user}</Typography>
     </IconButton>
     <Menu
         id="demo-positioned-menu"
