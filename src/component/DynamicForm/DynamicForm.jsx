@@ -4,18 +4,12 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import Body from "./Body/Body";
 import styles from "./DynamicForm.module.css";
 import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { initListener } from "../../services";
-import { listenerUser,listenerForms } from "../../socket";
-import { uploadValues } from "../../redux/slice";
+import {  useSelector } from "react-redux";
+
 export default function DynamicForm() {
-const dispatch =  useDispatch();
-const {forms,user} = useSelector(state=>state.data)
-useEffect(()=>{
-  initListener(dispatch)
-  user?listenerUser(user,dispatch,uploadValues):null
-  user?listenerForms(dispatch,uploadValues):null
-},[user])
+
+const {forms} = useSelector(state=>state.data)
+
 
   useEffect(()=>{
     
