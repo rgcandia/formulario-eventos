@@ -85,3 +85,15 @@ export function alertErrorDeleteFormPending(){
   })
 }
 
+export function alertPending(){
+  return Swal.fire({
+    toast: true,
+    position: 'top-end',
+    icon: 'success',
+    title: 'Un momento por favor',
+    timerProgressBar: true,
+    showConfirmButton: false,
+    timer: 3000
+  })
+  
+}

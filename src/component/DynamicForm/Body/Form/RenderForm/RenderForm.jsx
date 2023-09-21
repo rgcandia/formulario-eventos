@@ -9,7 +9,7 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from 'react-router-dom';
 import { updateForm } from "../../../../../socket.js";
-import { alertSendFormOk } from "../../../../../services.js";
+import { alertPending } from "../../../../../services.js";
 
 
 export default function RenderForm({handleClose}) {
@@ -27,7 +27,7 @@ export default function RenderForm({handleClose}) {
     e.preventDefault();
     updateForm({id,form,user});
     handleClose(false);
-    alertSendFormOk();
+    alertPending();
   }
   
   return (
