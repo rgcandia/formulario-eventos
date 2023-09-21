@@ -19,9 +19,10 @@ export const initSocket = (user)=>{
       }
 }
 export const listenerUser = (email,dispatch,action)=>{
-  socket.on(email,({forms,alertCreateForm})=>{
+  socket.on(email,({forms,alertCreateForm,deleteForm})=>{
  if(forms){  dispatch(action(forms))}
  if(alertCreateForm){alertSetFormOk()}
+ if(deleteForm){alertDeleteFormPending()}
   })
 }
 
