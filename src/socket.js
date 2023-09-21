@@ -1,8 +1,11 @@
 import io from "socket.io-client";
+// importo las alertas
+import {alertSetFormOk,alertDeleteFormPending} from './services.js'
 let socket;
 const apiUrlDeploy = import.meta.env.VITE_URL_API_DEPLOY;
 const apiUrlDev = "http://localhost:4001/";
 const apiUrl = import.meta.env.PROD ? apiUrlDeploy : apiUrlDev;
+
 
 // inicia socket con el usuario en el evento join
 export const initSocket = (user)=>{
@@ -16,8 +19,9 @@ export const initSocket = (user)=>{
       }
 }
 export const listenerUser = (email,dispatch,action)=>{
-  socket.on(email,(value)=>{
-  dispatch(action(value))
+  socket.on(email,({forms,alertCreateForm})=>{
+ if(forms){  dispatch(action(forms))}
+ if(alertCreateForm){alertSetFormOk()}
   })
 }
 
@@ -26,7 +30,6 @@ export const listenerForms = (dispatch,action)=>{
   dispatch(action(value))
   })
 }
-
 
 export const createForm = (email)=>{
 

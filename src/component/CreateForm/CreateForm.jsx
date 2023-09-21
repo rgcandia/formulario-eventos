@@ -3,12 +3,12 @@ import AddIcon from '@mui/icons-material/Add'
 import styles from './CreateForm.module.css';
 import { useSelector } from "react-redux";
 import { createForm } from "../../socket.js"; 
-import { alertSetFormOk } from "../../services.js";
+// import { alertSetFormOk } from "../../services.js";
 const CreateForm = ()=>{
     const {user} =  useSelector(state=>state.data)
     const handlerClick = (e)=>{
         createForm(user);
-        alertSetFormOk();
+        // alertSetFormOk();
     }
     return (<Box>
        <Box className = {styles.button} component='div' onClick={handlerClick}>

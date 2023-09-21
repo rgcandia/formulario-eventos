@@ -19,7 +19,7 @@ const handleDelete = (id,user)=>{
 const form = forms.find((e)=>{return e.id===id})
  if(form.pending){
   deleteFormPending(id,user)
-  alertDeleteFormPending();
+  // alertDeleteFormPending();
  }else{
   alertErrorDeleteFormPending();
  }
