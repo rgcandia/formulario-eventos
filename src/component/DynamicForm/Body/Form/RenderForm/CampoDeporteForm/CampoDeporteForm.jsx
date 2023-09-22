@@ -9,8 +9,12 @@ export default function CampoDeporteForm(){
       //funciones
               //funcion manejadora del dispatch 
   const handleChange = (e) => {
-    const { value, id } = e.target;
-    dispatch(updateForm({ ...formData, campoDeporte: {...formData.campoDeporte,[id]: value } }));
+    const { value, id, type } = e.target;
+    if(type==='number' && value >= 0 || type==='textarea'){
+
+      dispatch(updateForm({ ...formData, campoDeporte: {...formData.campoDeporte,[id]: value } }));
+    }
+
   };
                 //manejador de los check
   const handleCheckChange = (e)=>{

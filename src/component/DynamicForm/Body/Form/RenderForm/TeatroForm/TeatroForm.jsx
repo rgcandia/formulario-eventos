@@ -14,8 +14,13 @@ export default function TeatroForm(){
   //funciones
               //funcion manejadora del dispatch 
   const handleChange = (e) => {
+
     const { value, id } = e.target;
-    dispatch(updateForm({ ...formData, teatro: {...formData.teatro,[id]: value } }));
+    if(value>=0){
+      dispatch(updateForm({ ...formData, teatro: {...formData.teatro,[id]: value } }));
+    }
+    
+
   };
               //manejador de los check
   const handleCheckChange = (e)=>{
@@ -33,7 +38,10 @@ dispatch(updateForm({...formData,teatro:{...formData.teatro,dataSobreEscenario:{
     
   const handleChangeSobreEscenario =(e)=>{
     const {value,id} = e.target;
-    dispatch(updateForm({...formData,teatro:{...formData.teatro,dataSobreEscenario:{...formData.teatro.dataSobreEscenario,[id]:value}}}))
+    if(value>=0){
+
+      dispatch(updateForm({...formData,teatro:{...formData.teatro,dataSobreEscenario:{...formData.teatro.dataSobreEscenario,[id]:value}}}))
+    }
   }
 
   const handleCheckChangeSobreEscenario = (e)=>{
@@ -41,8 +49,11 @@ dispatch(updateForm({...formData,teatro:{...formData.teatro,dataSobreEscenario:{
     dispatch(updateForm({...formData,teatro:{...formData.teatro,dataSobreEscenario:{...formData.teatro.dataSobreEscenario,[name]:checked}}}))
   }  
   const handleChangeBajoEscenario =(e)=>{
-    const {value,id} = e.target;
-    dispatch(updateForm({...formData,teatro:{...formData.teatro,dataBajoEscenario:{...formData.teatro.dataBajoEscenario,[id]:value}}}))
+    const {value,id,type} = e.target;
+    if(type==='number' && value >= 0 || type==='textarea'){
+      dispatch(updateForm({...formData,teatro:{...formData.teatro,dataBajoEscenario:{...formData.teatro.dataBajoEscenario,[id]:value}}}))
+    }
+    
   }
   const handleCheckChangeBajoEscenario = (e)=>{
     const {name, checked} = e.target;

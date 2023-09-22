@@ -11,7 +11,10 @@ export default function TingladoForm(){
               //funcion manejadora del dispatch 
   const handleChange = (e) => {
     const { value, id } = e.target;
-    dispatch(updateForm({ ...formData, tinglado: {...formData.tinglado,[id]: value } }));
+    if(value>=0){
+
+      dispatch(updateForm({ ...formData, tinglado: {...formData.tinglado,[id]: value } }));
+    }
   };
               //manejador de los check
   const handleCheckChange = (e)=>{
@@ -28,7 +31,10 @@ dispatch(updateForm({...formData,tinglado:{...formData.tinglado,dataSobreEscenar
     
   const handleChangeSobreEscenario =(e)=>{
     const {value,id} = e.target;
-    dispatch(updateForm({...formData,tinglado:{...formData.tinglado,dataSobreEscenario:{...formData.tinglado.dataSobreEscenario,[id]:value}}}))
+    if(value>=0){
+
+      dispatch(updateForm({...formData,tinglado:{...formData.tinglado,dataSobreEscenario:{...formData.tinglado.dataSobreEscenario,[id]:value}}}))
+    }
   }
 
   const handleCheckChangeSobreEscenario = (e)=>{
@@ -36,8 +42,11 @@ dispatch(updateForm({...formData,tinglado:{...formData.tinglado,dataSobreEscenar
     dispatch(updateForm({...formData,tinglado:{...formData.tinglado,dataSobreEscenario:{...formData.tinglado.dataSobreEscenario,[name]:checked}}}))
   }  
   const handleChangeBajoEscenario =(e)=>{
-    const {value,id} = e.target;
-    dispatch(updateForm({...formData,tinglado:{...formData.tinglado,dataBajoEscenario:{...formData.tinglado.dataBajoEscenario,[id]:value}}}))
+    const {value,id,type} = e.target;
+    if(type==='number' && value >= 0 || type==='textarea'){
+
+      dispatch(updateForm({...formData,tinglado:{...formData.tinglado,dataBajoEscenario:{...formData.tinglado.dataBajoEscenario,[id]:value}}}))
+    }
   }
   const handleCheckChangeBajoEscenario = (e)=>{
     const {name, checked} = e.target;

@@ -15,7 +15,9 @@ export default function Otro(){
               //funcion manejadora del dispatch 
   const handleChange = (e) => {
     const { value, id } = e.target;
-    dispatch(updateForm({ ...formData, otro: {...formData.otro,[id]: value } }));
+    if(value>=0){
+      dispatch(updateForm({ ...formData, otro: {...formData.otro,[id]: value } }));
+    }
   };
               //manejador de los check
   const handleCheckChange = (e)=>{
@@ -32,7 +34,9 @@ dispatch(updateForm({...formData,otro:{...formData.otro,dataSobreEscenario:{...f
     
   const handleChangeSobreEscenario =(e)=>{
     const {value,id} = e.target;
-    dispatch(updateForm({...formData,otro:{...formData.otro,dataSobreEscenario:{...formData.otro.dataSobreEscenario,[id]:value}}}))
+    if(value>=0){
+      dispatch(updateForm({...formData,otro:{...formData.otro,dataSobreEscenario:{...formData.otro.dataSobreEscenario,[id]:value}}}))
+    }
   }
 
   const handleCheckChangeSobreEscenario = (e)=>{
@@ -40,8 +44,10 @@ dispatch(updateForm({...formData,otro:{...formData.otro,dataSobreEscenario:{...f
     dispatch(updateForm({...formData,otro:{...formData.otro,dataSobreEscenario:{...formData.otro.dataSobreEscenario,[name]:checked}}}))
   }  
   const handleChangeBajoEscenario =(e)=>{
-    const {value,id} = e.target;
-    dispatch(updateForm({...formData,otro:{...formData.otro,dataBajoEscenario:{...formData.otro.dataBajoEscenario,[id]:value}}}))
+    const {value,id,type} = e.target;
+    if(type==='number' && value >= 0 || type==='textarea'){
+      dispatch(updateForm({...formData,otro:{...formData.otro,dataBajoEscenario:{...formData.otro.dataBajoEscenario,[id]:value}}}))
+    }
   }
   const handleCheckChangeBajoEscenario = (e)=>{
     const {name, checked} = e.target;

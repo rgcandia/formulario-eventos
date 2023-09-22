@@ -80,7 +80,7 @@ const form = forms.find((e)=>{return e.id===id})
         <CreateForm/>
         
       </Box>
-      <Box sx={{display:'flex',justifyContent:'center',alignItems:'center',flexDirection:'column'}}>
+      <Box sx={{display:'flex',justifyContent:'center',alignItems:'center',flexDirection:'column',padding:'10px'}}>
       <Typography>No tienes formularios en la base de datos</Typography>
       <Typography>Para crear un formulario nuevo, haz click en el botón del signo más.</Typography>
       </Box>
