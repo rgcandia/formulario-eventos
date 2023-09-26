@@ -1,7 +1,7 @@
 import React from 'react';
 import { Dialog,Slide,AppBar, Toolbar, IconButton } from "@mui/material";
 import CloseIcon from '@mui/icons-material/Close';
-
+import RenderFormView from './RenderFormView/RenderFormView';
 
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
@@ -29,7 +29,10 @@ return(<Dialog
             <CloseIcon/>
         </IconButton>
     </Toolbar>
+
 </AppBar>
+
+<RenderFormView/>
 
 </Dialog>)
 } 
