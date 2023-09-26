@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
-export default function Card ({handleOpen}){
+export default function Card ({handleOpen,handleOpen2}){
 
   const { id } = useParams();
 const {forms} = useSelector(state=>state.data)
@@ -37,6 +37,9 @@ const selectedForm = forms?.find(e=>e.id==id)
     const handleClickOpen = ()=>{
       handleOpen(true);
     }
+    const handleClickView = ()=>{
+      handleOpen2(true)
+    }
     useEffect(()=>{
       
     },[forms])
@@ -68,6 +71,7 @@ const selectedForm = forms?.find(e=>e.id==id)
 </Typography>
 
 <Button onClick={handleClickOpen}>{pending?'Completar':'Actualizar'}</Button> 
+{!pending&&<Button onClick={handleClickView}>Ver</Button>}
 </Box>
     </Box>
         </Box>
