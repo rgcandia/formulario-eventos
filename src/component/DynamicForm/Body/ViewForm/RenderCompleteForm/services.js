@@ -15,3 +15,15 @@ export function convertirStringAFechaHora(stringFecha) {
   }
 
   
+ export function convertirLugar(lugar){
+ 
+    let result = "";
+    for(const propiedad in lugar){
+        if(lugar[propiedad]){
+            result += `${propiedad} `
+            
+        }
+    }
+
+    return result;
+ } 
