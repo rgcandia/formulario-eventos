@@ -12,7 +12,7 @@
               const valorRenderizado =
                 typeof valor === 'boolean' ? valor.toString() : valor;
                return <Typography variant='body2'>
-                    <strong>{propiedad}:</strong>
+                    <strong>{propiedad}:</strong> &nbsp; 
                     {valorRenderizado}
                     </Typography>
             }
