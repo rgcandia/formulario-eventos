@@ -14,7 +14,7 @@ export function convertirStringAFechaHora(stringFecha) {
     }
   }
 
-  
+  // Funcion para obtener del objeto lugar las propiedades.
  export function convertirLugar(lugar){
  
     let result = "";
@@ -27,3 +27,4 @@ export function convertirStringAFechaHora(stringFecha) {
 
     return result;
  } 
+

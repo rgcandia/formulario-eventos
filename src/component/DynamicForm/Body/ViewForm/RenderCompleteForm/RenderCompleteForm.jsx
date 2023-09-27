@@ -30,7 +30,7 @@ export default function RenderCompleteForm ({form}){
  
         {home.lugar.Teatro&&<Teatro form={teatro}/>}    
         {home.lugar.Otro&&<Otros form={otro}/>}
-        {home.lugar.Tinglado&&<Tinglado/>}
-        {home.lugar.CampoDeporte&&<CampoDeporte/>}
+        {home.lugar.Tinglado&&<Tinglado form={tinglado}/>}
+        {home.lugar.CampoDeporte&&<CampoDeporte form={campoDeporte}/>}
     </Box>)
 }
