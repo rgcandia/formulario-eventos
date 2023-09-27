@@ -20,7 +20,7 @@ export function convertirStringAFechaHora(stringFecha) {
     let result = "";
     for(const propiedad in lugar){
         if(lugar[propiedad]){
-            result += `${propiedad} `
+            result += ` ${propiedad} `
             
         }
     }

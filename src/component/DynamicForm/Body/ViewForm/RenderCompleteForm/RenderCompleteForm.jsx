@@ -4,10 +4,11 @@ import {
     convertirStringAFechaHora,
 
 } from './services.js'
+import styles from './RenderCompleteForm.module.css'
 export default function RenderCompleteForm ({form}){
    const {home,teatro,tinglado,campoDeporte,otro} = form.data; 
     
-    return(<Box>
+    return(<Box className={styles.render}>
         <Typography variant='h6'>Datos Generales del Formulario</Typography>
         <Typography variant='body2'>Formulario ID: {form.id}</Typography>
         <Typography variant='body2'>Fecha de Creación: {convertirStringAFechaHora(form.createdAt)} </Typography>
@@ -22,6 +23,8 @@ export default function RenderCompleteForm ({form}){
         <Typography variant='body2'>Fecha: {home.fecha}</Typography>
         <Typography variant='body2'>Horario: {home.hora}</Typography>
         <Typography variant='body2'>Lugar: {convertirLugar(home.lugar)}</Typography>
+ 
+
 
     </Box>)
 }
