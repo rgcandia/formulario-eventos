@@ -11,10 +11,10 @@
               const valor = objeto[propiedad];
               const valorRenderizado =
                 typeof valor === 'boolean' ? valor.toString() : valor;
-               return <Typography variant='body2'>
-                    <strong>{propiedad}:</strong> &nbsp; 
-                    {valorRenderizado}
-                    </Typography>
+               return valor===false?null:<Typography variant='body2'>
+               <strong>{propiedad}:</strong> &nbsp; 
+               {valorRenderizado}
+               </Typography>
             }
 
         })
