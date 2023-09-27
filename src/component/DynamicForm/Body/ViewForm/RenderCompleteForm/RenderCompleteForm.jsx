@@ -5,6 +5,10 @@ import {
 
 } from './services.js'
 import styles from './RenderCompleteForm.module.css'
+import Teatro from "./Teatro/Teatro.jsx";
+import Otros from "./Otro/Otros.jsx";
+import Tinglado from "./Tinglado/Tinglado.jsx";
+import CampoDeporte from "./CampoDeporte/CampoDeporte.jsx";
 export default function RenderCompleteForm ({form}){
    const {home,teatro,tinglado,campoDeporte,otro} = form.data; 
     
@@ -24,7 +28,9 @@ export default function RenderCompleteForm ({form}){
         <Typography variant='body2'><strong>Horario:</strong> {home.hora}</Typography>
         <Typography variant='body2'><strong>Lugar:</strong> {convertirLugar(home.lugar)}</Typography>
  
-
-
+        {home.lugar.Teatro&&<Teatro form={teatro}/>}    
+        {home.lugar.Otro&&<Otros form={otro}/>}
+        {home.lugar.Tinglado&&<Tinglado/>}
+        {home.lugar.CampoDeporte&&<CampoDeporte/>}
     </Box>)
 }
