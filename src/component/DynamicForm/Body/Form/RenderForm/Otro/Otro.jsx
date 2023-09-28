@@ -62,7 +62,7 @@ dispatch(updateForm({...formData,otro:{...formData.otro,dataSobreEscenario:{...f
     <Box className={styles.bodyOtro}>
     <Box>
     <FormControlLabel
-       label={<Typography variant='body1'>Padres</Typography>}
+       label={<Typography variant='body2'><strong>Padres</strong></Typography>}
       control={<Checkbox
         checked={formData?.otro.padres || false}
         name='padres'
@@ -82,7 +82,7 @@ dispatch(updateForm({...formData,otro:{...formData.otro,dataSobreEscenario:{...f
     }
     </Box>
     <FormControlLabel
-      label={<Typography variant='body1' >Alumnos</Typography>}
+      label={<Typography variant='body2' ><strong>Alumnos</strong></Typography>}
       control={<Checkbox
       checked={formData?.otro.alumnos || false}
       name='alumnos'
@@ -102,8 +102,9 @@ dispatch(updateForm({...formData,otro:{...formData.otro,dataSobreEscenario:{...f
     }
 
     <Box>
+      <Typography variant='body2'><strong>SOBRE EL ESCENARIO</strong></Typography>
     <FormControlLabel
-       label={<Typography variant='body1' sx={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }}>Sobre el Escenario</Typography>}
+       label={<Typography variant='body2'>Tildar para completar los items necesarios sobre el escenario</Typography>}
       control={<Checkbox
       checked={formData?.otro.sobreEscenario || false}
       name='sobreEscenario'
@@ -244,8 +245,9 @@ dispatch(updateForm({...formData,otro:{...formData.otro,dataSobreEscenario:{...f
     </Box>
 
     <Box>
+    <Typography variant="body2"><strong>BAJO EL ESCENARIO</strong></Typography>
     <FormControlLabel
-      label={<Typography variant='body1' sx={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }}>Bajo el Escenario</Typography>}
+      label={<Typography variant='body2'>Tildar para completar los items necesarios bajo el escenario</Typography>}
       control={<Checkbox
       checked={formData?.otro.bajoEscenario || false}
       name='bajoEscenario'

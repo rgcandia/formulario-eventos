@@ -20,6 +20,7 @@ export default function Form({isOpen,handleClose}){
        handleClose(false)
        dispatch(updateForm(resetForm()))
     }
+
     return (
         <Dialog
 fullScreen

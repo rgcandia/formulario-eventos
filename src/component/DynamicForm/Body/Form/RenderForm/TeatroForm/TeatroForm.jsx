@@ -78,7 +78,7 @@ dispatch(updateForm({...formData,teatro:{...formData.teatro,dataSobreEscenario:{
     <Box  className={styles.padres}>
     
     <FormControlLabel
-      label={<Typography variant='body1'>Padres</Typography>}
+      label={<Typography variant='body2'><strong>Padres</strong></Typography>}
       control={<Checkbox
         checked={formData?.teatro.padres || false}
         name='padres'
@@ -105,7 +105,7 @@ dispatch(updateForm({...formData,teatro:{...formData.teatro,dataSobreEscenario:{
    <Box className={styles.alumnos}>
     
    <FormControlLabel
-      label={<Typography variant='body1' >Alumnos</Typography>}
+      label={<Typography variant='body2' ><strong>Alumnos</strong></Typography>}
       control={<Checkbox
         checked={formData?.teatro.alumnos || false}
         name='alumnos'
@@ -128,9 +128,9 @@ dispatch(updateForm({...formData,teatro:{...formData.teatro,dataSobreEscenario:{
 
    </Box>
     <Box  >
-      <Typography>SOBRE EL ESCENARIO</Typography>
+      <Typography variant='body2'><strong>SOBRE EL ESCENARIO</strong></Typography>
     <FormControlLabel
-      label={<Typography variant='body1' >Tildar para completar los items necesarios sobre el escenario</Typography>}
+      label={<Typography variant='body2' >Tildar para completar los items necesarios sobre el escenario</Typography>}
       control={<Checkbox
         checked={formData?.teatro.sobreEscenario || false}
         name='sobreEscenario'
@@ -283,7 +283,7 @@ dispatch(updateForm({...formData,teatro:{...formData.teatro,dataSobreEscenario:{
 
     <Box >
    
-    <Typography variant='body1'>BAJO EL ESCENARIO</Typography>
+    <Typography variant='body2'><strong>BAJO EL ESCENARIO</strong></Typography>
     <FormControlLabel
       label={<Typography variant='body2'>Tildar para completar los items necesarios bajo el escenario</Typography>}
       control={<Checkbox

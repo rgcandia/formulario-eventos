@@ -5,7 +5,7 @@ import TeatroForm from './TeatroForm/TeatroForm.jsx';
 import HomeForm from './HomeForm/HomeForm.jsx';
 import Otros from './Otro/Otro.jsx'
 import styles from './RenderForm.module.css';
-import { useState } from "react";
+import {  useState } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from 'react-router-dom';
 import { updateForm } from "../../../../../socket.js";
@@ -29,7 +29,7 @@ export default function RenderForm({handleClose}) {
     handleClose(false);
     alertPending();
   }
-  
+
   return (
     <Box component='form' className={styles.containerForm} onSubmit={handleSubmit}>
       <Box sx={{ display: 'flex', justifyContent: 'center' }}>
