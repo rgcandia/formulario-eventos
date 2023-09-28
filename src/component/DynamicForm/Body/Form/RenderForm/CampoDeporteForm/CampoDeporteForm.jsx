@@ -35,7 +35,7 @@ export default function CampoDeporteForm(){
                       block: 'start',    // Opcional: posición de inicio del elemento
                     });
                   }
-                  console.log('se renderiza useEffect')
+                 
                 }, []);  
           
   return (<Box className={styles.campoDeporte}>
