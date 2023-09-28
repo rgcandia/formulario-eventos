@@ -23,13 +23,23 @@ export default function CampoDeporteForm(){
      dispatch(updateForm({...formData,campoDeporte:{...formData.campoDeporte,[name]:checked}}))
                 }  
 
-                useEffect(()=>{
-                  console.log('se renderiza')
-                  window.scrollTo(0, 0);
-                },[])
+                useEffect(() => {
+                  // Identificar el elemento de destino por su id
+                  const targetElement = document.getElementById('miAncla');
+              
+                  // Verificar si se encontró el elemento
+                  if (targetElement) {
+                    // Utilizar el método scrollIntoView para desplazar hacia el elemento
+                    targetElement.scrollIntoView({
+                      behavior: 'smooth', // Opcional: scroll suave
+                      block: 'start',    // Opcional: posición de inicio del elemento
+                    });
+                  }
+                  console.log('se renderiza useEffect')
+                }, []);  
           
   return (<Box className={styles.campoDeporte}>
-    <Box ><Typography><strong> Sección Campo de deporte</strong></Typography></Box>
+    <Box id='miAncla'><Typography><strong> Sección Campo de Deporte</strong></Typography></Box>
  
     <Box className={styles.bodyCampoDeporte}>
     <TextField

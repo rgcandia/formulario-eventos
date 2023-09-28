@@ -21,6 +21,7 @@ export default function RenderForm({handleClose}) {
   // Función para cambiar la sección actual
   const handleChangeSection = (sectionName) => {
     setCurrentSection(sectionName);
+   
   };
   // Funcion para enviar el formulario
   const handleSubmit = (e) => {
