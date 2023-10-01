@@ -8,7 +8,7 @@ import styles from './RenderForm.module.css';
 import {  useState } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from 'react-router-dom';
-import { updateForm } from "../../../../../socket.js";
+import { createForm } from "../../../../../socket.js";
 import { alertPending } from "../../../../../services.js";
 
 
@@ -26,7 +26,8 @@ export default function RenderForm({handleClose}) {
   // Funcion para enviar el formulario
   const handleSubmit = (e) => {
     e.preventDefault();
-    updateForm({id,form,user});
+    // updateForm({id,form,user});
+    createForm(user,form)
     handleClose(false);
     alertPending();
   }

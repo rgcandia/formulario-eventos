@@ -34,10 +34,10 @@ export const listenerForms = (dispatch,action)=>{
   })
 }
 
-export const createForm = (email)=>{
+export const createForm = (email,data)=>{
 
   if(!socket) return null;
-  socket.emit("createForm",{email});
+  socket.emit("createForm",{email,data});
   
 }
 export const deleteFormPending = (id,user)=>{
