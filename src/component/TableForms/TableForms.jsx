@@ -1,30 +1,21 @@
 // TableForms.js
 import { Box, Button, Typography } from "@mui/material";
-import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import FileOpenIcon from '@mui/icons-material/FileOpen';
 import React, { useEffect } from "react";
 import {  useSelector } from "react-redux";
 import ListIcon from '@mui/icons-material/List';
 import styles from "./TableForms.module.css";
 import CreateForm from "../CreateForm/CreateForm";
-import { deleteFormPending } from "../../socket";
-import { Link } from "react-router-dom";
-import { alertDeleteFormPending,alertErrorDeleteFormPending } from "../../services";
+import { useNavigate } from "react-router-dom";
 export default function TableForms({ forms }) {
+  const navigate = useNavigate();
  const {user} = useSelector(state=>state.data)
   useEffect(() => {
    
     
   }, [forms]);
-const handleDelete = (id,user)=>{
-const form = forms.find((e)=>{return e.id===id})
- if(form.pending){
-  deleteFormPending(id,user)
-  // alertDeleteFormPending();
- }else{
-  alertErrorDeleteFormPending();
- }
-
-
+const handleView = (id)=>{
+  navigate('/formulario/'+id)
 }
   return (
     <Box className={styles.tablecontainer}>
@@ -42,9 +33,8 @@ const form = forms.find((e)=>{return e.id===id})
         <thead>
           <tr>
             <th>ID</th>
-            <th>Pending</th>
             <th>Creation date</th>
-            <th>Delete</th>
+            <th>View</th>
           </tr>
         </thead>
         <tbody>
@@ -56,17 +46,12 @@ const form = forms.find((e)=>{return e.id===id})
                 className={form.pending ? styles.pendingRow : null}
                 >
                 <td>
-                <Link
-                 to={`formulario/${form.id}`}
-                 className={styles.link}
-                >
-                    {form.id}
-                </Link>
-                  
+            
+                {form.id}
                 </td>
-                <td>{form.pending ? "Yes" : "No"}</td>
+               
                 <td>{form.createdAt.split("T")[0]}</td>
-                <td><Button onClick={()=>{handleDelete(form.id,user)}}><DeleteForeverIcon/></Button></td>
+                <td><Button onClick={()=>{handleView(form.id)}}><FileOpenIcon /></Button></td>
               </tr>
             )
           })}

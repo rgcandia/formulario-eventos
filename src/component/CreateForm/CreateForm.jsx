@@ -1,18 +1,17 @@
 import { Box } from "@mui/material"
 import AddIcon from '@mui/icons-material/Add'
 import styles from './CreateForm.module.css';
-import { useSelector } from "react-redux";
-import { createForm } from "../../socket.js"; 
-// import { alertSetFormOk } from "../../services.js";
+import { useNavigate } from "react-router-dom";
 const CreateForm = ()=>{
-    const {user} =  useSelector(state=>state.data)
-    const handlerClick = (e)=>{
-        createForm(user);
-        // alertSetFormOk();
-    }
+    const navigate = useNavigate();
+   const handleClick = ()=>{
+    navigate('/formulario')
+   }
+   
+
     return (<Box>
-       <Box className = {styles.button} component='div' onClick={handlerClick}>
-       <AddIcon sx={{fontSize:40}}/>
+       <Box className = {styles.button} component='div' onClick={handleClick} >
+       <AddIcon sx={{fontSize:40}}/>   
        </Box>
     </Box>)
 }
