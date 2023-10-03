@@ -1,10 +1,7 @@
 export const  estructuraFormulario = {
-    home:{lugar:{
-      Teatro:false,
-      Tinglado:false,
-      CampoDeporte:false,
-      Otro:false,
-    }},
+    home:{
+      
+    },
     teatro:{
       padres:false,
       alumnos:false,

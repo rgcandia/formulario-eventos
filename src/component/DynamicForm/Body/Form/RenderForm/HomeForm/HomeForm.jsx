@@ -104,11 +104,11 @@ label='Nombre del Evento'
         name="lugar"
         label='Lugar'
         onChange={handleChangeSelect2}
-        value={formData?.home.lugar || "Otro"}
+        value={formData?.home.lugar || ''}
         fullWidth 
         defaultValue="Otro"
         required
-        helperText='Una vez seleccionado el Lugar, completar el formulario correspondiente, ingresando desde el boton de abajo'
+        helperText='Una vez seleccionado el Lugar, completa el formulario correspondiente ingresando desde el botón de abajo.'
         
       >
         <MenuItem value="Teatro">Teatro</MenuItem>

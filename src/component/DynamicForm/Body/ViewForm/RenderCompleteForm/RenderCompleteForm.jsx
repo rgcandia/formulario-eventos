@@ -1,6 +1,5 @@
 import { Box , Typography} from "@mui/material"
 import {
-    convertirLugar,
     convertirStringAFechaHora,
 
 } from './services.js'
@@ -26,7 +25,7 @@ export default function RenderCompleteForm ({form}){
         <Typography variant='body2'><strong>Sector:</strong> {home.sector}</Typography>
         <Typography variant='body2'><strong>Fecha:</strong> {home.fecha}</Typography>
         <Typography variant='body2'><strong>Horario:</strong> {home.hora}</Typography>
-        <Typography variant='body2'><strong>Lugar:</strong> {convertirLugar(home.lugar)}</Typography>
+        <Typography variant='body2'><strong>Lugar:</strong> {home.lugar}</Typography>
  
         {home.lugar.Teatro&&<Teatro form={teatro}/>}    
         {home.lugar.Otro&&<Otros form={otro}/>}
