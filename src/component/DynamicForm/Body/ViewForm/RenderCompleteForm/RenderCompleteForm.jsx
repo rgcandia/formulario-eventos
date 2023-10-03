@@ -27,9 +27,9 @@ export default function RenderCompleteForm ({form}){
         <Typography variant='body2'><strong>Horario:</strong> {home.hora}</Typography>
         <Typography variant='body2'><strong>Lugar:</strong> {home.lugar}</Typography>
  
-        {home.lugar.Teatro&&<Teatro form={teatro}/>}    
-        {home.lugar.Otro&&<Otros form={otro}/>}
-        {home.lugar.Tinglado&&<Tinglado form={tinglado}/>}
-        {home.lugar.CampoDeporte&&<CampoDeporte form={campoDeporte}/>}
+        {home.lugar==="Teatro"&&<Teatro form={teatro}/>}    
+        {home.lugar==="Otro"&&<Otros form={otro}/>}
+        {home.lugar==="Tinglado"&&<Tinglado form={tinglado}/>}
+        {home.lugar==="CampoDeporte"&&<CampoDeporte form={campoDeporte}/>}
     </Box>)
 }
