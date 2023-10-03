@@ -13,7 +13,8 @@ import { alertPending } from "../../../../../services.js";
 
 
 export default function RenderForm({handleClose}) {
- const {Teatro,Tinglado,Otro,CampoDeporte} = useSelector(state=>state.data.form.home.lugar);
+//  const {Teatro,Tinglado,Otro,CampoDeporte} = useSelector(state=>state.data.form.home.lugar);
+const {lugar} = useSelector(state=>state.data.form.home)
  const {form,user} = useSelector(state=>state.data)
  const { id } = useParams();
   const [currentSection, setCurrentSection] = useState("Home"); // Valor inicial es "Home"
@@ -51,17 +52,17 @@ export default function RenderForm({handleClose}) {
 
 
      <Box className={styles.section}>
-     {Teatro&& currentSection === "Home"&&
-        <Button onClick={()=>{handleChangeSection("Teatro")}}>Teatro</Button>
+     {lugar==="Teatro"&& currentSection === "Home"&&
+        <Button variant='outlined' onClick={()=>{handleChangeSection("Teatro")}}>Teatro</Button>
         }
-         {Tinglado && currentSection === "Home"&&
-        <Button  onClick={()=>{handleChangeSection("Tinglado")}}>Tinglado</Button>
+         {lugar==="Tinglado" && currentSection === "Home"&&
+        <Button variant='outlined' onClick={()=>{handleChangeSection("Tinglado")}}>Tinglado</Button>
         }
-         {CampoDeporte&& currentSection === "Home"&&
-        <Button  onClick={()=>{handleChangeSection("CampoDeporte")}}>Campo de Deporte</Button>
+         {lugar==="CampoDeporte"&& currentSection === "Home"&&
+        <Button variant='outlined' onClick={()=>{handleChangeSection("CampoDeporte")}}>Campo de Deporte</Button>
         }
-         {Otro&& currentSection === "Home"&&
-        <Button  onClick={()=>{handleChangeSection("Otro")}}>Otro</Button>
+         {lugar==="Otro"&& currentSection === "Home"&&
+        <Button variant='outlined' onClick={()=>{handleChangeSection("Otro")}}>Otro</Button>
 
         }
      </Box>

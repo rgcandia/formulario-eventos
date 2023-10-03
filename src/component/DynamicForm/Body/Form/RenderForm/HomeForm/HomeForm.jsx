@@ -14,10 +14,10 @@ export default function HomeForm() {
     const {value,name} = e.target;
     dispatch(updateForm({ ...formData, home: {...formData.home,[name]: value } }));
   }
-  const handleCheckChange = (event) => {
-    const { name, checked } = event.target;
-    dispatch(updateForm({ ...formData, home: { ...formData.home, lugar:{...formData.home?.lugar,[name]: checked} } }));
-  };
+  const handleChangeSelect2 = (e)=>{
+    const {value,name} = e.target;
+    dispatch(updateForm({ ...formData, home: {...formData.home,[name]: value } }));
+  }
 
   const lugares = [
     { name: "Teatro", label: "Teatro" },
@@ -99,24 +99,25 @@ label='Nombre del Evento'
     </Box>
 
 
-<Box>
-        <Typography><strong>Lugar</strong></Typography>
-        <FormGroup>
-          {lugares.map((lugar) => (
-            <FormControlLabel
-              key={lugar.name}
-              control={
-                <Checkbox
-                  checked={formData?.home?.lugar?.[lugar.name] || false}
-                  onChange={handleCheckChange}
-                  name={lugar.name}
-                />
-              }
-              label={lugar.label}
-            />  
-          ))}
-        </FormGroup>
-      </Box>
+      <TextField
+        select
+        name="lugar"
+        label='Lugar'
+        onChange={handleChangeSelect2}
+        value={formData?.home.lugar || "Otro"}
+        fullWidth 
+        defaultValue="Otro"
+        required
+        helperText='Una vez seleccionado el Lugar, completar el formulario correspondiente, ingresando desde el boton de abajo'
+        
+      >
+        <MenuItem value="Teatro">Teatro</MenuItem>
+        <MenuItem value="Tinglado">Tinglado</MenuItem>
+        <MenuItem value="CampoDeporte">Campo de Deporte</MenuItem>
+        <MenuItem value="Otro">Otro</MenuItem>
+      </TextField>
+
+
     </Box>
   );
 }
