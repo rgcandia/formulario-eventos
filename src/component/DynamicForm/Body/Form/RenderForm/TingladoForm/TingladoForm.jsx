@@ -285,6 +285,15 @@ dispatch(updateForm({...formData,tinglado:{...formData.tinglado,dataSobreEscenar
          value={formData?.tinglado.dataBajoEscenario.sillas || ""}
          onChange={handleChangeBajoEscenario}
          />
+             <TextField
+         id='observacionesSillas'
+         label='Observaciones disposición de sillas'
+         multiline
+         rows={5}
+         value={formData?.tinglado.dataBajoEscenario.observacionesSillas || ""}
+         onChange={handleChangeBajoEscenario}
+         fullWidth
+         />
             <TextField
          id='gradas'
          type='number'
@@ -301,20 +310,13 @@ dispatch(updateForm({...formData,tinglado:{...formData.tinglado,dataSobreEscenar
          value={formData?.tinglado.dataBajoEscenario.tarimas || ""}
          onChange={handleChangeBajoEscenario}
          />
-            <TextField
-         id='microfonoInalambrico'
-         type='number'
-         label='Micrófono Inalambrico (cantidad)'
-         fullWidth
-         value={formData?.tinglado.dataBajoEscenario.microfonoInalambrico || ""}
-         onChange={handleChangeBajoEscenario}
-         />
+    
        <Box sx={{display:'flex',flexDirection:'column',alignItems:'flex-start',width:'100%'}}>
       <FormControlLabel
-      label='Proyector Arriba'
+      label='Parlante'
       control={<Checkbox
-      checked={formData?.tinglado.dataBajoEscenario.proyector || false}
-      name='proyector'
+      checked={formData?.tinglado.dataBajoEscenario.parlante || false}
+      name='parlante'
       onChange={handleCheckChangeBajoEscenario}
       />}
     />
@@ -343,121 +345,8 @@ dispatch(updateForm({...formData,tinglado:{...formData.tinglado,dataSobreEscenar
       onChange={handleCheckChangeBajoEscenario}
       />}
     />
-    <FormControlLabel
-      label='Aire Acondicionado'
-      control={<Checkbox
-      checked={formData?.tinglado.dataBajoEscenario.aireAcondicionado || false}
-      name='aireAcondicionado'
-      onChange={handleCheckChangeBajoEscenario}
-      />}
-    />
-    <FormControlLabel
-      label='Café'
-      control={<Checkbox
-      checked={formData?.tinglado.dataBajoEscenario.cafe || false}
-      name='cafe'
-      onChange={handleCheckChangeBajoEscenario}
-      />}
-    />
-    <FormControlLabel
-      label='Agua caliente'
-      control={<Checkbox
-      checked={formData?.tinglado.dataBajoEscenario.aguaCaliente || false}
-      name='aguaCaliente'
-      onChange={handleCheckChangeBajoEscenario}
-      />}
-    />
-     <FormControlLabel
-      label='Té'
-      control={<Checkbox
-      checked={formData?.tinglado.dataBajoEscenario.te || false}
-      name='te'
-      onChange={handleCheckChangeBajoEscenario}
-      />}
-    />
-     <FormControlLabel
-      label='Jarra con agua y hielo'
-      control={<Checkbox
-      checked={formData?.tinglado.dataBajoEscenario.jarraAguaHielo || false}
-      name='jarraAguaHielo'
-      onChange={handleCheckChangeBajoEscenario}
-      />}
-    />
-    <FormControlLabel
-      label='Azúcar'
-      control={<Checkbox
-      checked={formData?.tinglado.dataBajoEscenario.azucar || false}
-      name='azucar'
-      onChange={handleCheckChangeBajoEscenario}
-      />}
-    />
-    <FormControlLabel
-      label='Edulcorante'
-      control={<Checkbox
-      checked={formData?.tinglado.dataBajoEscenario.edulcorante || false}
-      name='edulcorante'
-      onChange={handleCheckChangeBajoEscenario}
-      />}
-    />
-    <FormControlLabel
-      label='Vasos plásticos (frio)'
-      control={<Checkbox
-      checked={formData?.tinglado.dataBajoEscenario.vasosPlasticos || false}
-      name='vasosPlasticos'
-      onChange={handleCheckChangeBajoEscenario}
-      />}
-    />
-    
-    <FormControlLabel
-      label='Vasos telgopor (calor)'
-      control={<Checkbox
-      checked={formData?.tinglado.dataBajoEscenario.vasosTelgopor || false}
-      name='vasosTelgopor'
-      onChange={handleCheckChangeBajoEscenario}
-      />}
-    />
-  <FormControlLabel
-      label='Vasos vidrio'
-      control={<Checkbox
-      checked={formData?.tinglado.dataBajoEscenario.vasoVidrio || false}
-      name='vasoVidrio'
-      onChange={handleCheckChangeBajoEscenario}
-      />}
-    />
-      <FormControlLabel
-      label='Batidores'
-      control={<Checkbox
-      checked={formData?.tinglado.dataBajoEscenario.batidores || false}
-      name='batidores'
-      onChange={handleCheckChangeBajoEscenario}
-      />}
-    />
-     <FormControlLabel
-      label='Servilleta'
-      control={<Checkbox
-      checked={formData?.tinglado.dataBajoEscenario.servilleta || false}
-      name='servilleta'
-      onChange={handleCheckChangeBajoEscenario}
-      />}
-    />
+   
       </Box>
-    
-    <TextField
-         id='sandwichesMiga'
-         type='number'
-         label='Sandwiches de miga (cantidad)'
-         fullWidth
-         value={formData?.tinglado.dataBajoEscenario.sandwichesMiga || ""}
-         onChange={handleChangeBajoEscenario}
-         />
-    <TextField
-         id='medialunas'
-         type='number'
-         label='Medialunas (cantidad)'
-         fullWidth
-         value={formData?.tinglado.dataBajoEscenario.medialunas || ""}
-         onChange={handleChangeBajoEscenario}
-         />
 
         <TextField
          id='musica'
@@ -470,23 +359,13 @@ dispatch(updateForm({...formData,tinglado:{...formData.tinglado,dataSobreEscenar
          Resto de la música entregar en pendrive en formato mp3, enumeradas conforme al orden en que serán 
          reproducidas en el acto"
          />
-      <TextField
-         id='video'
-         label='Video o presentación'
-         multiline
-         rows={5}
-         onChange={handleChangeBajoEscenario}
-         value={formData?.tinglado.dataBajoEscenario.video || ""}
-         helperText="En el caso de utilizar proyector, entregar los archivos en pendrive en formato mp4(video)
-          o pdf (presentacion power point). Si se llegara a usar más de un video, enumerarlos conforme
-          al orden en que serán reproducidos en el acto"
-         />
+   
     <TextField
          id='observacionesComunicaciones'
-         label='Observaciones Comunicaciones'
+         label='Observaciones Comunicación'
          multiline
          rows={5}
-         value={formData?.tinglado.dataBajoEscenario.observacionesComunicaciones || ""}
+         value={formData?.tinglado.dataBajoEscenario.observacionesComunicacion || ""}
          onChange={handleChangeBajoEscenario}
          fullWidth
          />
