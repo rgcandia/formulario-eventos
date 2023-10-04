@@ -20,6 +20,8 @@ export default function Otro(){
                   dispatch(updateForm({ ...formData, otro: {...formData.otro,[id]: value } }));
                 }if(type==='time'){
                   dispatch(updateForm({ ...formData, otro: {...formData.otro,[id]: value } }));
+                }if(type==='text'){
+                  dispatch(updateForm({ ...formData, otro: {...formData.otro,[id]: value } }));
                 }
             
               };
@@ -64,6 +66,15 @@ dispatch(updateForm({...formData,otro:{...formData.otro,dataSobreEscenario:{...f
  </Box>
   
     <Box className={styles.bodyOtro}>
+    <TextField
+id='lugarEvento'
+type='text'
+onChange={handleChange}
+value={formData.otro.lugarEvento || ""}
+fullWidth
+required
+label='Lugar del Evento'
+/>
     <Box>
     <FormControlLabel
        label={<Typography variant='body2'><strong>Padres</strong></Typography>}
@@ -153,10 +164,20 @@ dispatch(updateForm({...formData,otro:{...formData.otro,dataSobreEscenario:{...f
         <MenuItem value="sin fondo">sin fondo</MenuItem>
         
          </TextField>
+         <Box sx={{display:'flex',flexDirection:'column',alignItems:'flex-start',width:'100%'}}>
+  <FormControlLabel
+      label='Escudo para fondo'
+      control={<Checkbox
+      checked={formData?.otro.dataSobreEscenario.escudoFondo || false}
+      name='escudoFondo'
+      onChange={handleCheckChangeSobreEscenario}
+      />}
+    />
+  </Box>
          <TextField
          id="mesas"
          type='number'
-         label='Sillas(cantidad)'
+         label='Mesas (cantidad)'
          fullWidth
          value={formData.otro.dataSobreEscenario.mesas || ""}
          onChange={handleChangeSobreEscenario}
@@ -164,7 +185,7 @@ dispatch(updateForm({...formData,otro:{...formData.otro,dataSobreEscenario:{...f
          <TextField
          id='Pupitres'
          type="number"
-         label='Pupitres(cantidad)'
+         label='Pupitres (cantidad)'
          fullWidth
          value={formData.otro.dataSobreEscenario.Pupitres || ""}
          onChange={handleChangeSobreEscenario}
@@ -185,7 +206,7 @@ dispatch(updateForm({...formData,otro:{...formData.otro,dataSobreEscenario:{...f
          <TextField
          id='sillas'
          type='number'
-         label='Sillas'
+         label='Sillas (cantidad)'
          fullWidth
          value={formData.otro.dataSobreEscenario.sillas || ""}
          onChange={handleChangeSobreEscenario}
@@ -193,7 +214,7 @@ dispatch(updateForm({...formData,otro:{...formData.otro,dataSobreEscenario:{...f
          <TextField
          id='gradas'
          type='number'
-         label='Gradas'
+         label='Gradas (cantidad)'
          fullWidth
          value={formData.otro.dataSobreEscenario.gradas || ""}
          onChange={handleChangeSobreEscenario}
@@ -401,6 +422,16 @@ dispatch(updateForm({...formData,otro:{...formData.otro,dataSobreEscenario:{...f
       name='jarraAguaHielo'
       onChange={handleCheckChangeBajoEscenario}
       />}
+      
+    />
+        <FormControlLabel
+      label='Gaseosas'
+      control={<Checkbox
+      checked={formData?.otro.dataBajoEscenario.gaseosas || false}
+      name='gaseosas'
+      onChange={handleCheckChangeBajoEscenario}
+      />}
+      
     />
     <FormControlLabel
       label='Azúcar'
@@ -415,6 +446,14 @@ dispatch(updateForm({...formData,otro:{...formData.otro,dataSobreEscenario:{...f
       control={<Checkbox
       checked={formData?.otro.dataBajoEscenario.edulcorante || false}
       name='edulcorante'
+      onChange={handleCheckChangeBajoEscenario}
+      />}
+    />
+      <FormControlLabel
+      label='Leche Chocolatada'
+      control={<Checkbox
+      checked={formData?.otro.dataBajoEscenario.lecheChocolatada || false}
+      name='lecheChocolatada'
       onChange={handleCheckChangeBajoEscenario}
       />}
     />
@@ -476,6 +515,15 @@ dispatch(updateForm({...formData,otro:{...formData.otro,dataSobreEscenario:{...f
          value={formData.otro.dataBajoEscenario.medialunas || ""}
          onChange={handleChangeBajoEscenario}
          />
+            <TextField
+         id='tortas'
+         type='number'
+         label='Tortas (cantidad)'
+         fullWidth
+         value={formData.otro.dataBajoEscenario.tortas || ""}
+         onChange={handleChangeBajoEscenario}
+         />
+
 
         <TextField
          id='musica'
@@ -488,17 +536,7 @@ dispatch(updateForm({...formData,otro:{...formData.otro,dataSobreEscenario:{...f
          Resto de la música entregar en pendrive en formato mp3, enumeradas conforme al orden en que serán 
          reproducidas en el acto"
          />
-      <TextField
-         id='video'
-         label='Video o presentación'
-         multiline
-         rows={5}
-         onChange={handleChangeBajoEscenario}
-         value={formData.otro.dataBajoEscenario.video || ""}
-         helperText="En el caso de utilizar proyector, entregar los archivos en pendrive en formato mp4(video)
-          o pdf (presentacion power point). Si se llegara a usar más de un video, enumerarlos conforme
-          al orden en que serán reproducidos en el acto"
-         />
+   
     <TextField
          id='observacionesComunicaciones'
          label='Observaciones Comunicaciones'

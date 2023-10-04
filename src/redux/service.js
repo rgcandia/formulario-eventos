@@ -87,6 +87,7 @@ export const  estructuraFormulario = {
         jarraAguaHielo:false,
         azucar:false,
         edulcorante:false,
+        lecheChocolatada:false,
         vasosPlasticos:false,
         vasosTelgopor:false,
         vasoVidrio:false,
