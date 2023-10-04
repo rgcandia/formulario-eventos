@@ -116,7 +116,7 @@ label='Lugar del Evento'
       />
     }
    <Box sx={{display:'flex', alignItems:'center',gap:'10px',width:'100%',marginTop:'50px'}}>
-   <Typography variant='body2'><strong>Limpieza Inicio</strong></Typography> 
+   <Typography variant='body2'><strong>Limpieza pre-evento</strong></Typography> 
    <TextField
      id='limpiezaInicio'
      type='time'
@@ -127,7 +127,7 @@ label='Lugar del Evento'
      />
    </Box>
    <Box sx={{display:'flex', alignItems:'center',gap:'10px',width:'100%',marginTop:'50px'}}>
-   <Typography variant='body2'><strong>Limpieza Final</strong></Typography> 
+   <Typography variant='body2'><strong>Limpieza post-evento</strong></Typography> 
    <TextField
      id='limpiezaFinal'
      type='time'
