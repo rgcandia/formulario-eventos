@@ -49,11 +49,21 @@ export default function CampoDeporteForm(){
       onChange={handleChange}
       value={formData.campoDeporte.mesaSombrillaSillas || ""}
       fullWidth
+      helperText='Indicar cantidad en base a las mesas'
       />
+     <TextField
+         id='observacionesDisposicionMesas'
+         label='Observaciones de la disposición de las mesas'
+         multiline
+         rows={5}
+         value={formData.campoDeporte.observacionesDisposicionMesas || ""}
+         onChange={handleChange} 
+         fullWidth
+         />
        <TextField
       id='mesaLarga'
       type='number'
-      label='Mesa larga'
+      label='Mesa larga (cantidad)'
       value={formData.campoDeporte.mesaLarga || ""}
       onChange={handleChange}
       fullWidth
@@ -61,7 +71,7 @@ export default function CampoDeporteForm(){
          <TextField
       id='alargues'
       type='number'
-      label=' Alargues'
+      label=' Alargues (cantidad)'
       value={formData.campoDeporte.alargues || ""}
       onChange={handleChange}
       fullWidth
@@ -69,7 +79,7 @@ export default function CampoDeporteForm(){
          <TextField
       id='zapatillas'
       type='number'
-      label='Zapatillas'
+      label='Zapatillas (cantidad)'
       value={formData.campoDeporte.zapatillas || ""}
       onChange={handleChange}
       fullWidth
@@ -77,7 +87,7 @@ export default function CampoDeporteForm(){
      <Box sx={{display:'flex',flexDirection:'column',alignItems:'flex-start',width:'100%'}}>
 
      <FormControlLabel
-      label='Parlantes'
+      label='Parlantes (cantidad)'
       control={<Checkbox
       checked={formData?.campoDeporte.parlantes || false}
       name='parlantes'
