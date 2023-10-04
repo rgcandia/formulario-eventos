@@ -155,10 +155,20 @@ dispatch(updateForm({...formData,tinglado:{...formData.tinglado,dataSobreEscenar
         <MenuItem value="sin fondo">sin fondo</MenuItem>
         
          </TextField>
+         <Box sx={{display:'flex',flexDirection:'column',alignItems:'flex-start',width:'100%'}}>
+  <FormControlLabel
+      label='Escudo para fondo'
+      control={<Checkbox
+      checked={formData?.tinglado.dataSobreEscenario.escudoFondo || false}
+      name='escudoFondo'
+      onChange={handleCheckChangeSobreEscenario}
+      />}
+    />
+  </Box>
          <TextField
          id="mesas"
          type='number'
-         label='Sillas(cantidad)'
+         label='Mesas (cantidad)'
          fullWidth
          value={formData?.tinglado.dataSobreEscenario.mesas || ""}
          onChange={handleChangeSobreEscenario}
@@ -166,7 +176,7 @@ dispatch(updateForm({...formData,tinglado:{...formData.tinglado,dataSobreEscenar
          <TextField
          id='Pupitres'
          type="number"
-         label='Pupitres(cantidad)'
+         label='Pupitres (cantidad)'
          fullWidth
          value={formData?.tinglado.dataSobreEscenario.Pupitres || ""}
          onChange={handleChangeSobreEscenario}
@@ -187,7 +197,7 @@ dispatch(updateForm({...formData,tinglado:{...formData.tinglado,dataSobreEscenar
          <TextField
          id='sillas'
          type='number'
-         label='Sillas'
+         label='Sillas (cantidad)'
          fullWidth
          value={formData?.tinglado.dataSobreEscenario.sillas || ""}
          onChange={handleChangeSobreEscenario}
@@ -195,9 +205,17 @@ dispatch(updateForm({...formData,tinglado:{...formData.tinglado,dataSobreEscenar
          <TextField
          id='gradas'
          type='number'
-         label='Gradas'
+         label='Gradas (cantidad)'
          fullWidth
          value={formData?.tinglado.dataSobreEscenario.gradas || ""}
+         onChange={handleChangeSobreEscenario}
+         />
+           <TextField
+         id='escaleras'
+         type='number'
+         label='Escaleras (cantidad)'
+         fullWidth
+         value={formData?.tinglado.dataSobreEscenario.escaleras || ""}
          onChange={handleChangeSobreEscenario}
          />
          <TextField
@@ -218,59 +236,15 @@ dispatch(updateForm({...formData,tinglado:{...formData.tinglado,dataSobreEscenar
       />}
     />
     </Box>
-          <TextField
-         id='lucesYPulsadores'
-         type='number'
-         label='Luces y pulsadores'
-         fullWidth
-         value={formData?.tinglado.dataSobreEscenario.lucesYPulsadores || ""}
-         onChange={handleChangeSobreEscenario}
-         />
            <TextField
          id='alargues'
          type='number'
-         label='Alargues(cantidad)'
+         label='Alargues (cantidad)'
          fullWidth
          value={formData?.tinglado.dataSobreEscenario.alargues || ""}
          onChange={handleChangeSobreEscenario}
          />
-      
-   <Box sx={{display:'flex',flexDirection:'column',alignItems:'flex-start',width:'100%'}}>
-   <FormControlLabel
-      label='Proyector sobre escenario'
-      control={<Checkbox
-      checked={formData?.tinglado.dataSobreEscenario.proyector || false}
-      name='proyector'
-      onChange={handleCheckChangeSobreEscenario}
-      />}
-    />
-        <FormControlLabel
-      label='Puntero'
-      control={<Checkbox
-      checked={formData?.tinglado.dataSobreEscenario.puntero || false}
-      name='puntero'
-      onChange={handleCheckChangeSobreEscenario}
-      />}
-    />
- 
- <FormControlLabel
-      label='Pantalla'
-      control={<Checkbox
-      checked={formData?.tinglado.dataSobreEscenario.pantalla || false}
-      name='pantalla'
-      onChange={handleCheckChangeSobreEscenario}
-      />}
-    />
-     <FormControlLabel
-      label='Computadora'
-      control={<Checkbox
-      checked={formData?.tinglado.dataSobreEscenario.computadora || false}
-      name='computadora'
-      onChange={handleCheckChangeSobreEscenario}
-      />}
-    />
-   </Box>
-    
+
       </Box>
     }
     </Box>
