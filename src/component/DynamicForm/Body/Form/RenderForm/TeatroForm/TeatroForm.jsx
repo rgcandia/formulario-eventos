@@ -24,11 +24,12 @@ export default function TeatroForm(){
               //funcion manejadora del dispatch 
   const handleChange = (e) => {
 
-    const { value, id } = e.target;
-    if(value>=0){
+    const { value, id,type } = e.target;
+    if(type==='number'&& value>=0){
+      dispatch(updateForm({ ...formData, teatro: {...formData.teatro,[id]: value } }));
+    }if(type==='time'){
       dispatch(updateForm({ ...formData, teatro: {...formData.teatro,[id]: value } }));
     }
-    
 
   };
               //manejador de los check
@@ -127,7 +128,29 @@ dispatch(updateForm({...formData,teatro:{...formData.teatro,dataSobreEscenario:{
     }
 
    </Box>
-    <Box  >
+   <Box sx={{display:'flex', alignItems:'center',gap:'10px',width:'100%',marginTop:'50px'}}>
+   <Typography variant='body2'><strong>Limpieza Inicio</strong></Typography> 
+   <TextField
+     id='limpiezaInicio'
+     type='time'
+     value={formData?.teatro.limpiezaInicio || ""}
+     onChange={handleChange}
+     fullWidth
+     required
+     />
+   </Box>
+   <Box sx={{display:'flex', alignItems:'center',gap:'10px',width:'100%',marginTop:'50px'}}>
+   <Typography variant='body2'><strong>Limpieza Final</strong></Typography> 
+   <TextField
+     id='limpiezaFinal'
+     type='time'
+     value={formData?.teatro.limpiezaFinal || ""}
+     onChange={handleChange}
+     fullWidth
+     required
+     />
+   </Box>
+    <Box sx={{marginTop:'50px'}} >
       <Typography variant='body2'><strong>SOBRE EL ESCENARIO</strong></Typography>
     <FormControlLabel
       label={<Typography variant='body2' >Tildar para completar los items necesarios sobre el escenario</Typography>}
@@ -281,7 +304,7 @@ dispatch(updateForm({...formData,teatro:{...formData.teatro,dataSobreEscenario:{
     }
     </Box>
 
-    <Box >
+    <Box sx={{marginTop:'50px'}} >
    
     <Typography variant='body2'><strong>BAJO EL ESCENARIO</strong></Typography>
     <FormControlLabel
