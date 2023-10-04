@@ -9,6 +9,7 @@ export const  estructuraFormulario = {
       bajoEscenario:false,
 
       dataSobreEscenario:{
+        escudoFondo:false,
         pieMicrofono:false,
         proyector:false,
         puntero:false,

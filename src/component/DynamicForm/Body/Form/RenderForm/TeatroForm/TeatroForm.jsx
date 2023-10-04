@@ -179,10 +179,20 @@ dispatch(updateForm({...formData,teatro:{...formData.teatro,dataSobreEscenario:{
         <MenuItem value="sin fondo">sin fondo</MenuItem>
         
          </TextField>
+  <Box sx={{display:'flex',flexDirection:'column',alignItems:'flex-start',width:'100%'}}>
+  <FormControlLabel
+      label='Escudo para fondo'
+      control={<Checkbox
+      checked={formData?.teatro.dataSobreEscenario.escudoFondo || false}
+      name='escudoFondo'
+      onChange={handleCheckChangeSobreEscenario}
+      />}
+    />
+  </Box>
          <TextField
          id="mesas"
          type='number'
-         label='Mesas(cantidad)'
+         label='Mesas (cantidad)'
          fullWidth
          value={formData?.teatro.dataSobreEscenario.mesas || ""}
          onChange={handleChangeSobreEscenario}
@@ -190,7 +200,7 @@ dispatch(updateForm({...formData,teatro:{...formData.teatro,dataSobreEscenario:{
          <TextField
          id='Pupitres'
          type="number"
-         label='Pupitres(cantidad)'
+         label='Pupitres (cantidad)'
          fullWidth
          value={formData?.teatro.dataSobreEscenario.Pupitres || ""}
          onChange={handleChangeSobreEscenario}
@@ -211,7 +221,7 @@ dispatch(updateForm({...formData,teatro:{...formData.teatro,dataSobreEscenario:{
          <TextField
          id='sillas'
          type='number'
-         label='Sillas'
+         label='Sillas (cantidad)'
          fullWidth
          value={formData?.teatro.dataSobreEscenario.sillas || ""}
          onChange={handleChangeSobreEscenario}
@@ -219,7 +229,7 @@ dispatch(updateForm({...formData,teatro:{...formData.teatro,dataSobreEscenario:{
          <TextField
          id='gradas'
          type='number'
-         label='Gradas'
+         label='Gradas (cantidad)'
          fullWidth
          value={formData?.teatro.dataSobreEscenario.gradas || ""}
          onChange={handleChangeSobreEscenario}
@@ -249,7 +259,7 @@ dispatch(updateForm({...formData,teatro:{...formData.teatro,dataSobreEscenario:{
           <TextField
          id='lucesYPulsadores'
          type='number'
-         label='Luces y pulsadores'
+         label='Luces y pulsadores (cantidad)'
          fullWidth
          value={formData?.teatro.dataSobreEscenario.lucesYPulsadores || ""}
          onChange={handleChangeSobreEscenario}
@@ -257,7 +267,7 @@ dispatch(updateForm({...formData,teatro:{...formData.teatro,dataSobreEscenario:{
            <TextField
          id='alargues'
          type='number'
-         label='Alargues(cantidad)'
+         label='Alargues (cantidad)'
          fullWidth
          value={formData?.teatro.dataSobreEscenario.alargues || ""}
          onChange={handleChangeSobreEscenario}
@@ -342,6 +352,15 @@ dispatch(updateForm({...formData,teatro:{...formData.teatro,dataSobreEscenario:{
          value={formData?.teatro.dataBajoEscenario.sillas || ""}
          onChange={handleChangeBajoEscenario}
          />
+           <TextField
+         id='observacionesSillas'
+         label='Observaciones disposición de sillas'
+         multiline
+         rows={5}
+         value={formData?.teatro.dataBajoEscenario.observacionesSillas || ""}
+         onChange={handleChangeBajoEscenario}
+         fullWidth
+         />
             <TextField
          id='gradas'
          type='number'
@@ -358,6 +377,14 @@ dispatch(updateForm({...formData,teatro:{...formData.teatro,dataSobreEscenario:{
          value={formData?.teatro.dataBajoEscenario.tarimas || ""}
          onChange={handleChangeBajoEscenario}
          />
+             <TextField
+         id='escaleras'
+         type='number'
+         label='Escaleras (cantidad)'
+         fullWidth
+         value={formData?.teatro.dataBajoEscenario.escaleras || ""}
+         onChange={handleChangeBajoEscenario}
+         />
             <TextField
          id='microfonoInalambrico'
          type='number'
@@ -369,11 +396,12 @@ dispatch(updateForm({...formData,teatro:{...formData.teatro,dataSobreEscenario:{
          <Box sx={{display:'flex',flexDirection:'column',alignItems:'flex-start',width:'100%'}}>
 
          <FormControlLabel
-      label='Proyector Arriba'
+      label='Proyector Arriba (proyecta en el medio del fondo blanco)'
       control={<Checkbox
       checked={formData?.teatro.dataBajoEscenario.proyector || false}
       name='proyector'
       onChange={handleCheckChangeBajoEscenario}
+     
       />}
     />
 
