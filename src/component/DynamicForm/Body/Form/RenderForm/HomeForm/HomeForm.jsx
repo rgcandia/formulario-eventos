@@ -74,7 +74,7 @@ label='Nombre del Evento'
       </TextField>
      
     <Box sx={{display:'flex', alignItems:'center',gap:'10px',width:'100%'}}>
-     <Typography>Fecha</Typography> 
+     <Typography><strong>Fecha</strong></Typography> 
     <TextField
      id='fecha'
      type='date'
@@ -86,7 +86,7 @@ label='Nombre del Evento'
     </Box>
     <Box  sx={{display:'flex', alignItems:'center',gap:'10px',width:'100%'}}>
       <Typography>
-        Hora
+       <strong>Hora</strong> 
       </Typography>
     <TextField
     id="hora"

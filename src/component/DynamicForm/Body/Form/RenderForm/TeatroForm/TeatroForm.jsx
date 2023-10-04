@@ -150,7 +150,7 @@ dispatch(updateForm({...formData,teatro:{...formData.teatro,dataSobreEscenario:{
      required
      />
    </Box>
-    <Box sx={{marginTop:'50px'}} >
+    <Box sx={{marginTop:'20px'}} >
       <Typography variant='body2'><strong>SOBRE EL ESCENARIO</strong></Typography>
     <FormControlLabel
       label={<Typography variant='body2' >Tildar para completar los items necesarios sobre el escenario</Typography>}
@@ -304,7 +304,7 @@ dispatch(updateForm({...formData,teatro:{...formData.teatro,dataSobreEscenario:{
     }
     </Box>
 
-    <Box sx={{marginTop:'50px'}} >
+    <Box sx={{marginTop:'20px'}} >
    
     <Typography variant='body2'><strong>BAJO EL ESCENARIO</strong></Typography>
     <FormControlLabel
