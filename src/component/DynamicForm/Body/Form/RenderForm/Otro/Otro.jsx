@@ -13,12 +13,16 @@ export default function Otro(){
   ]
   //funciones
               //funcion manejadora del dispatch 
-  const handleChange = (e) => {
-    const { value, id } = e.target;
-    if(value>=0){
-      dispatch(updateForm({ ...formData, otro: {...formData.otro,[id]: value } }));
-    }
-  };
+              const handleChange = (e) => {
+
+                const { value, id,type } = e.target;
+                if(type==='number'&& value>=0){
+                  dispatch(updateForm({ ...formData, otro: {...formData.otro,[id]: value } }));
+                }if(type==='time'){
+                  dispatch(updateForm({ ...formData, otro: {...formData.otro,[id]: value } }));
+                }
+            
+              };
               //manejador de los check
   const handleCheckChange = (e)=>{
     const {name, checked} = e.target;
@@ -100,8 +104,29 @@ dispatch(updateForm({...formData,otro:{...formData.otro,dataSobreEscenario:{...f
       fullWidth
       />
     }
-
-    <Box>
+   <Box sx={{display:'flex', alignItems:'center',gap:'10px',width:'100%',marginTop:'50px'}}>
+   <Typography variant='body2'><strong>Limpieza Inicio</strong></Typography> 
+   <TextField
+     id='limpiezaInicio'
+     type='time'
+     value={formData?.otro.limpiezaInicio || ""}
+     onChange={handleChange}
+     fullWidth
+     required
+     />
+   </Box>
+   <Box sx={{display:'flex', alignItems:'center',gap:'10px',width:'100%',marginTop:'50px'}}>
+   <Typography variant='body2'><strong>Limpieza Final</strong></Typography> 
+   <TextField
+     id='limpiezaFinal'
+     type='time'
+     value={formData?.otro.limpiezaFinal || ""}
+     onChange={handleChange}
+     fullWidth
+     required
+     />
+   </Box>
+    <Box sx={{marginTop:'20px'}}>
       <Typography variant='body2'><strong>SOBRE EL ESCENARIO</strong></Typography>
     <FormControlLabel
        label={<Typography variant='body2'>Tildar para completar los items necesarios sobre el escenario</Typography>}
@@ -244,7 +269,7 @@ dispatch(updateForm({...formData,otro:{...formData.otro,dataSobreEscenario:{...f
     }
     </Box>
 
-    <Box>
+    <Box  sx={{marginTop:'20px'}}>
     <Typography variant="body2"><strong>BAJO EL ESCENARIO</strong></Typography>
     <FormControlLabel
       label={<Typography variant='body2'>Tildar para completar los items necesarios bajo el escenario</Typography>}
