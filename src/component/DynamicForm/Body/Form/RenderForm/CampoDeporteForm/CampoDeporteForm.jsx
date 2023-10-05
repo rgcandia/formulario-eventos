@@ -43,13 +43,30 @@ export default function CampoDeporteForm(){
  
     <Box className={styles.bodyCampoDeporte}>
     <TextField
-      id='mesaSombrillaSillas'
+      id='mesas'
       type='number'
-      label='Mesa,sombrilla y sillas'
+      label='Mesas (cantidad)'
       onChange={handleChange}
-      value={formData.campoDeporte.mesaSombrillaSillas || ""}
+      value={formData.campoDeporte.mesas || ""}
       fullWidth
-      helperText='Indicar cantidad en base a las mesas'
+     
+      />
+       <TextField
+      id='sillas'
+      type='number'
+      label='Sillas (cantidad)'
+      onChange={handleChange}
+      value={formData.campoDeporte.sillas|| ""}
+      fullWidth
+      />
+       <TextField
+      id='sombrillas'
+      type='number'
+      label='Sombrillas (cantidad)'
+      onChange={handleChange}
+      value={formData.campoDeporte.sombrillas || ""}
+      fullWidth
+     
       />
      <TextField
          id='observacionesDisposicionMesas'
@@ -148,15 +165,7 @@ export default function CampoDeporteForm(){
          onChange={handleChange} 
          fullWidth
          />
-          <TextField
-         id='observacionesCocina'
-         label='Observaciones Cocina'
-         multiline
-         rows={5}
-         value={formData.campoDeporte.observacionesCocina || ""}
-         onChange={handleChange} 
-         fullWidth
-         />
+ 
             <TextField
          id='observacionesCompras'
          label='Observaciones Compras'
