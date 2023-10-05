@@ -49,7 +49,8 @@ export const  estructuraFormulario = {
       dataBajoEscenario:{
         parlante:false,
         fondoPrensa:false,
-        alargue:false,      
+        alargue:false,
+        consola:false,      
       },
     },
     campoDeporte:{

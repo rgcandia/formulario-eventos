@@ -188,19 +188,22 @@ dispatch(updateForm({...formData,tinglado:{...formData.tinglado,dataSobreEscenar
          value={formData?.tinglado.dataSobreEscenario.Pupitres || ""}
          onChange={handleChangeSobreEscenario}
          />
-         <TextField
-         select
-         name='manteles'
-         label='Manteles'
+                  <TextField
+         id='mantelBlanco'
+         type='number'
+         label='Mantel Blanco (cantidad)'
          fullWidth
-         defaultValue='Ninguno'
-         value={formData?.tinglado.dataSobreEscenario.manteles}
-         onChange={handleChangeSelecFondo}
-         >
-          <MenuItem value='Azul'>Azul</MenuItem>
-          <MenuItem value='Blanco'>Blanco</MenuItem>
-          <MenuItem value='Ninguno'>Ninguno</MenuItem>
-         </TextField>
+         value={formData?.tinglado.dataSobreEscenario.mantelBlanco || ""}
+         onChange={handleChangeSobreEscenario}
+         />
+              <TextField
+         id='mantelAzul'
+         type='number'
+         label='Mantel Azul (cantidad)'
+         fullWidth
+         value={formData?.tinglado.dataSobreEscenario.mantelAzul || ""}
+         onChange={handleChangeSobreEscenario}
+         />
          <TextField
          id='sillas'
          type='number'
@@ -327,6 +330,14 @@ dispatch(updateForm({...formData,tinglado:{...formData.tinglado,dataSobreEscenar
       onChange={handleCheckChangeBajoEscenario}
       />}
     />
+        <FormControlLabel
+      label='Consola'
+      control={<Checkbox
+      checked={formData?.tinglado.dataBajoEscenario.consola || false}
+      name='consola'
+      onChange={handleCheckChangeBajoEscenario}
+      />}
+    />
 
 <FormControlLabel
       label='Fondo de prensa'
@@ -377,15 +388,6 @@ dispatch(updateForm({...formData,tinglado:{...formData.tinglado,dataSobreEscenar
          fullWidth
          />
 
-          <TextField
-         id='observacionesCocina'
-         label='Observaciones Cocina'
-         multiline
-         rows={5}
-         value={formData?.tinglado.dataBajoEscenario.observacionesCocina || ""}
-         onChange={handleChangeBajoEscenario}
-         fullWidth
-         />
              <TextField
          id='observacionesCompras'
          label='Observaciones Compras'
