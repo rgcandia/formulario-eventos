@@ -586,14 +586,6 @@ label='Lugar del Evento'
     </Box>
 
 </Box>
-
-
-    
     </Box>
-    
-  
-    
- 
-
   </Box>)
 }

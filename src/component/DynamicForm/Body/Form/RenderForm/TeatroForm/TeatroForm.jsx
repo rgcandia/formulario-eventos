@@ -41,7 +41,6 @@ export default function TeatroForm(){
   const handleChangeSelecFondo = (e)=>{
     
 const {value,name} = e.target;
-console.log(value)
 dispatch(updateForm({...formData,teatro:{...formData.teatro,dataSobreEscenario:{...formData.teatro.dataSobreEscenario,[name]:value}}}))
               
   } 
@@ -211,19 +210,24 @@ dispatch(updateForm({...formData,teatro:{...formData.teatro,dataSobreEscenario:{
          value={formData?.teatro.dataSobreEscenario.Pupitres || ""}
          onChange={handleChangeSobreEscenario}
          />
-         <TextField
-         select
-         name='manteles'
-         label='Manteles'
+       
+           <TextField
+         id='mantelBlanco'
+         type='number'
+         label='Mantel Blanco (cantidad)'
          fullWidth
-         defaultValue='Ninguno'
-         value={formData?.teatro.dataSobreEscenario.manteles }
-         onChange={handleChangeSelecFondo}
-         >
-          <MenuItem value='Azul'>Azul</MenuItem>
-          <MenuItem value='Blanco'>Blanco</MenuItem>
-          <MenuItem value='Ninguno'>Ninguno</MenuItem>
-         </TextField>
+         value={formData?.teatro.dataSobreEscenario.mantelBlanco || ""}
+         onChange={handleChangeSobreEscenario}
+         />
+              <TextField
+         id='mantelAzul'
+         type='number'
+         label='Mantel Azul (cantidad)'
+         fullWidth
+         value={formData?.teatro.dataSobreEscenario.mantelAzul || ""}
+         onChange={handleChangeSobreEscenario}
+         />
+
          <TextField
          id='sillas'
          type='number'
@@ -491,8 +495,8 @@ dispatch(updateForm({...formData,teatro:{...formData.teatro,dataSobreEscenario:{
       onChange={handleCheckChangeBajoEscenario}
       />}
     />
-    <FormControlLabel
-      label='Vasos plásticos (frio)'
+    {/* <FormControlLabel
+      label='Vasos plásticos (frio) '
       control={<Checkbox
       checked={formData?.teatro.dataBajoEscenario.vasosPlasticos || false}
       name='vasosPlasticos'
@@ -515,7 +519,7 @@ dispatch(updateForm({...formData,teatro:{...formData.teatro,dataSobreEscenario:{
       name='vasoVidrio'
       onChange={handleCheckChangeBajoEscenario}
       />}
-    />
+    /> */}
       <FormControlLabel
       label='Batidores'
       control={<Checkbox
@@ -533,23 +537,31 @@ dispatch(updateForm({...formData,teatro:{...formData.teatro,dataSobreEscenario:{
       />}
     />
          </Box>
-    
-    <TextField
-         id='sandwichesMiga'
+         <TextField
+         id='vasosPlasticos'
          type='number'
-         label='Sandwiches de miga (cantidad)'
+         label='Vasos plásticos "frio" (cantidad)'
          fullWidth
-         value={formData?.teatro.dataBajoEscenario.sandwichesMiga || ""}
+         value={formData?.teatro.dataBajoEscenario.vasosPlasticos || ""}
          onChange={handleChangeBajoEscenario}
          />
-    <TextField
-         id='medialunas'
+          <TextField
+         id='vasosTelgopor'
          type='number'
-         label='Medialunas (cantidad)'
+         label='Vasos telgopor "calor" (cantidad)'
          fullWidth
-         value={formData?.teatro.dataBajoEscenario.medialunas || ""}
+         value={formData?.teatro.dataBajoEscenario.vasosTelgopor || ""}
          onChange={handleChangeBajoEscenario}
          />
+               <TextField
+         id='vasosVidrio'
+         type='number'
+         label='Vasos vidrio (cantidad)'
+         fullWidth
+         value={formData?.teatro.dataBajoEscenario.vasosVidrio || ""}
+         onChange={handleChangeBajoEscenario}
+         />
+
 
         <TextField
          id='musica'
@@ -569,7 +581,7 @@ dispatch(updateForm({...formData,teatro:{...formData.teatro,dataSobreEscenario:{
          rows={5}
          onChange={handleChangeBajoEscenario}
          value={formData?.teatro.dataBajoEscenario.video || ""}
-         helperText="En el caso de utilizar proyector, entregar los archivos en pendrive en formato mp4(video)
+         helperText="En el caso de utilizar proyector, entregar los archivos en pendrive en formato mp4 (video)
           o pdf (presentacion power point). Si se llegara a usar más de un video, enumerarlos conforme
           al orden en que serán reproducidos en el acto"
          />
