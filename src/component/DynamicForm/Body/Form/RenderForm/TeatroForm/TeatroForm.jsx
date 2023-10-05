@@ -155,8 +155,9 @@ dispatch(updateForm({...formData,teatro:{...formData.teatro,dataSobreEscenario:{
 
    </Box>
   </Box>
-    <Box sx={{marginTop:'20px'}} >
-      <Typography variant='body2' ><strong>SOBRE EL ESCENARIO</strong></Typography>
+  <Box className={styles.items}>
+  <Box sx={{marginTop:'20px'}} >
+      <Typography variant='body2' sx={{marginBottom:'10px'}} ><strong>SOBRE EL ESCENARIO</strong></Typography>
     <FormControlLabel
       label={<Typography variant='body2' >Tildar para completar los items necesarios sobre el escenario</Typography>}
       control={<Checkbox
@@ -321,7 +322,7 @@ dispatch(updateForm({...formData,teatro:{...formData.teatro,dataSobreEscenario:{
 
     <Box sx={{marginTop:'20px'}} >
    
-    <Typography variant='body2'><strong>BAJO EL ESCENARIO</strong></Typography>
+    <Typography variant='body2'  sx={{marginBottom:'10px'}}><strong>BAJO EL ESCENARIO</strong></Typography>
     <FormControlLabel
       label={<Typography variant='body2'>Tildar para completar los items necesarios bajo el escenario</Typography>}
       control={<Checkbox
@@ -613,6 +614,9 @@ dispatch(updateForm({...formData,teatro:{...formData.teatro,dataSobreEscenario:{
     }
     
     </Box>
+
+  </Box>
+ 
 
     </Box>
     

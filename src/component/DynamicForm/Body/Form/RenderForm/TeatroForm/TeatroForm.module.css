@@ -15,6 +15,7 @@
     align-items: center;
     justify-content: center;
     gap: 16px;
+    margin-top: 10px;
 }
 .bajoEscenario{
     display: flex;
@@ -22,6 +23,7 @@
     align-items: center;
     justify-content: center;
     gap: 16px;
+    margin-top: 10px;
 }
 
 .bodyTeatro{
@@ -42,16 +44,34 @@ margin-bottom: 10px;
     margin-top: 10px;
     margin-bottom: 10px;  
 }
-@media(max-width:850px){
+.items{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px; 
+}
+@media(max-width:1000px){
     .bodyTeatro{
-        width: 90%;
+        width: 80%;
         
     }
     .teatro{
         padding: 0;
     }
   }
-
+  @media(max-width:900px){
+    .bodyTeatro{
+        width: 80%;
+        
+    }
+    .teatro{
+        padding: 0;
+    }
+    .items{
+        grid-template-columns: 1fr;
+    }
+  }
   
   @media(max-width:410px){
     .padresAlumnos{
