@@ -27,9 +27,24 @@
 .bodyTeatro{
     width: 50%;
 }
+.limpieza{
+    
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 10px;
+margin-top: 10px;
+margin-bottom: 10px;    
+}
+.padresAlumnos{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;  
+}
 @media(max-width:850px){
     .bodyTeatro{
-        width: 100%;
+        width: 90%;
         
     }
     .teatro{
@@ -37,3 +52,18 @@
     }
   }
 
+  
+  @media(max-width:410px){
+    .padresAlumnos{
+        grid-template-columns: 1fr ;
+    }
+  }
+
+@media(max-width:360px){
+    .limpieza{
+    
+        grid-template-columns: 1fr ;
+       
+            
+        }
+}
