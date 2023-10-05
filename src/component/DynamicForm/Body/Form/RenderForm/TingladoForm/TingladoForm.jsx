@@ -63,9 +63,37 @@ dispatch(updateForm({...formData,tinglado:{...formData.tinglado,dataSobreEscenar
  
     <Box className={styles.bodyTinglado}>
 
-    <Box className={styles.padres}>
+ 
+
+<Box className={styles.limpieza}>
+<Box >
+   <Typography variant='body2'>Limpieza pre-evento</Typography> 
+   <TextField
+     id='limpiezaInicio'
+     type='time'
+     value={formData?.tinglado.limpiezaInicio || ""}
+     onChange={handleChange}
+     fullWidth
+     required
+     />
+   </Box>
+   <Box >
+   <Typography variant='body2'>Limpieza post-evento</Typography> 
+   <TextField
+     id='limpiezaFinal'
+     type='time'
+     value={formData?.tinglado.limpiezaFinal || ""}
+     onChange={handleChange}
+     fullWidth
+     required
+     />
+   </Box>
+
+</Box>
+<Box className={styles.padresAlumnos}>
+<Box className={styles.padres}>
     <FormControlLabel
-         label={<Typography variant='body2'><strong>Padres</strong></Typography>}
+         label={<Typography variant='body2'>Padres</Typography>}
       control={<Checkbox
         checked={formData?.tinglado.padres || false}
         name='padres'
@@ -86,7 +114,7 @@ dispatch(updateForm({...formData,tinglado:{...formData.tinglado,dataSobreEscenar
     </Box>
     <Box className={styles.alumnos}>
     <FormControlLabel
-      label={<Typography variant='body2' ><strong>Alumnos</strong></Typography>}
+      label={<Typography variant='body2' >Alumnos</Typography>}
       control={<Checkbox
       checked={formData?.tinglado.alumnos || false}
       name='alumnos'
@@ -105,30 +133,9 @@ dispatch(updateForm({...formData,tinglado:{...formData.tinglado,dataSobreEscenar
       />
     }
     </Box>
-    <Box sx={{display:'flex', alignItems:'center',gap:'10px',width:'100%',marginTop:'50px'}}>
-   <Typography variant='body2'><strong>Limpieza pre-evento</strong></Typography> 
-   <TextField
-     id='limpiezaInicio'
-     type='time'
-     value={formData?.tinglado.limpiezaInicio || ""}
-     onChange={handleChange}
-     fullWidth
-     required
-     />
-   </Box>
-   <Box sx={{display:'flex', alignItems:'center',gap:'10px',width:'100%',marginTop:'50px'}}>
-   <Typography variant='body2'><strong>Limpieza post-evento</strong></Typography> 
-   <TextField
-     id='limpiezaFinal'
-     type='time'
-     value={formData?.tinglado.limpiezaFinal || ""}
-     onChange={handleChange}
-     fullWidth
-     required
-     />
-   </Box>
-
-    <Box sx={{marginTop:'20px'}}> 
+</Box>
+  <Box className={styles.items}>
+  <Box sx={{marginTop:'20px'}}> 
    <Typography variant='body2'><strong>SOBRE EL ESCENARIO</strong></Typography>
     <FormControlLabel
        label={<Typography variant='body2' >Tildar para completar los items necesarios sobre el escenario</Typography>}
@@ -401,6 +408,7 @@ dispatch(updateForm({...formData,tinglado:{...formData.tinglado,dataSobreEscenar
     }
     
     </Box>
+  </Box>
 
     </Box>
     

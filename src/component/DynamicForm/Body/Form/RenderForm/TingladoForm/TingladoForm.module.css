@@ -25,12 +25,60 @@
     justify-content: center;
     gap: 16px;
 }
-@media(max-width:850px){
+.limpieza{
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;    
+    }
+    .padresAlumnos{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;  
+    }
+    .items{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px; 
+    }
+@media(max-width:1000px){
     .bodyTinglado{
-        width: 100%;
+        width: 80%;
         
     }
     .tinglado{
         padding: 0;
     }
   }
+  @media(max-width:900px){
+    .bodyTinglado{
+        width: 80%;
+        
+    }
+    .tinglado{
+        padding: 0;
+    }
+    .items{
+        grid-template-columns: 1fr;
+    }
+  }
+  @media(max-width:500px){
+    .padresAlumnos{
+        grid-template-columns: 1fr ;
+    }
+  }
+
+@media(max-width:360px){
+    .limpieza{
+    
+        grid-template-columns: 1fr ;
+       
+            
+        }
+}
