@@ -12,6 +12,7 @@ export default function RenderCompleteForm ({form}){
    const {home,teatro,tinglado,campoDeporte,otro} = form.data; 
     
     return(<Box className={styles.render}>
+        <Box >
         <Typography variant='h6'>Datos Generales del Formulario</Typography>
         <Typography variant='body2'><strong>Formulario ID:</strong> {form.id}</Typography>
         <Typography variant='body2'><strong>Fecha de Creación</strong>: {convertirStringAFechaHora(form.createdAt)} </Typography>
@@ -26,6 +27,7 @@ export default function RenderCompleteForm ({form}){
         <Typography variant='body2'><strong>Fecha:</strong> {home.fecha}</Typography>
         <Typography variant='body2'><strong>Horario:</strong> {home.hora}</Typography>
         <Typography variant='body2'><strong>Lugar:</strong> {home.lugar}</Typography>
+        </Box>
  
         {home.lugar==="Teatro"&&<Teatro form={teatro}/>}    
         {home.lugar==="Otro"&&<Otros form={otro}/>}
