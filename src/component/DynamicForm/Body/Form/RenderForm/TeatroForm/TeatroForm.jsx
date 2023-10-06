@@ -203,7 +203,7 @@ dispatch(updateForm({...formData,teatro:{...formData.teatro,dataSobreEscenario:{
          onChange={handleChangeSobreEscenario}
          />
          <TextField
-         id='Pupitres'
+         id='pupitres'
          type="number"
          label='Pupitres (cantidad)'
          fullWidth
@@ -284,14 +284,20 @@ dispatch(updateForm({...formData,teatro:{...formData.teatro,dataSobreEscenario:{
          />
       
 <Box sx={{display:'flex',flexDirection:'column',alignItems:'flex-start',width:'100%'}}>
+
+<Box>
 <FormControlLabel
       label='Proyector sobre escenario'
       control={<Checkbox
       checked={formData?.teatro.dataSobreEscenario.proyector || false}
-      name='proyector'
+      name='proyectorA'
       onChange={handleCheckChangeSobreEscenario}
+      
       />}
     />
+<Typography variant="body2" color='gray'> (proyecta en un costado del fondo blanco)</Typography>
+</Box>
+
         <FormControlLabel
       label='Puntero'
       control={<Checkbox
@@ -403,17 +409,28 @@ dispatch(updateForm({...formData,teatro:{...formData.teatro,dataSobreEscenario:{
          value={formData?.teatro.dataBajoEscenario.microfonoInalambrico || ""}
          onChange={handleChangeBajoEscenario}
          />
+                <TextField
+         id='alargues'
+         type='number'
+         label='Alargues (cantidad)'
+         fullWidth
+         value={formData?.teatro.dataBajoEscenario.alargues || ""}
+         onChange={handleChangeSobreEscenario}
+         />
          <Box sx={{display:'flex',flexDirection:'column',alignItems:'flex-start',width:'100%'}}>
-
-         <FormControlLabel
-      label='Proyector Arriba (proyecta en el medio del fondo blanco)'
+        
+        <Box>
+        <FormControlLabel
+      label='Proyector Arriba'
       control={<Checkbox
       checked={formData?.teatro.dataBajoEscenario.proyector || false}
-      name='proyector'
+      name='proyectorB'
       onChange={handleCheckChangeBajoEscenario}
      
       />}
     />
+    <Typography variant="body2" color='gray'> (proyecta en el medio del fondo blanco)</Typography>
+        </Box>
 
 <FormControlLabel
       label='Fondo de prensa'
@@ -428,14 +445,6 @@ dispatch(updateForm({...formData,teatro:{...formData.teatro,dataSobreEscenario:{
       control={<Checkbox
       checked={formData?.teatro.dataBajoEscenario.computadora || false}
       name='computadora'
-      onChange={handleCheckChangeBajoEscenario}
-      />}
-    />
-    <FormControlLabel
-      label='Alargue'
-      control={<Checkbox
-      checked={formData?.teatro.dataBajoEscenario.alargue || false}
-      name='alargue'
       onChange={handleCheckChangeBajoEscenario}
       />}
     />
@@ -495,31 +504,7 @@ dispatch(updateForm({...formData,teatro:{...formData.teatro,dataSobreEscenario:{
       onChange={handleCheckChangeBajoEscenario}
       />}
     />
-    {/* <FormControlLabel
-      label='Vasos plásticos (frio) '
-      control={<Checkbox
-      checked={formData?.teatro.dataBajoEscenario.vasosPlasticos || false}
-      name='vasosPlasticos'
-      onChange={handleCheckChangeBajoEscenario}
-      />}
-    />
-    
-    <FormControlLabel
-      label='Vasos telgopor (calor)'
-      control={<Checkbox
-      checked={formData?.teatro.dataBajoEscenario.vasosTelgopor || false}
-      name='vasosTelgopor'
-      onChange={handleCheckChangeBajoEscenario}
-      />}
-    />
-  <FormControlLabel
-      label='Vasos vidrio'
-      control={<Checkbox
-      checked={formData?.teatro.dataBajoEscenario.vasoVidrio || false}
-      name='vasoVidrio'
-      onChange={handleCheckChangeBajoEscenario}
-      />}
-    /> */}
+
       <FormControlLabel
       label='Batidores'
       control={<Checkbox

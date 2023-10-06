@@ -7,20 +7,18 @@ export const  estructuraFormulario = {
       alumnos:false,
       sobreEscenario:false,
       bajoEscenario:false,
-
       dataSobreEscenario:{
         escudoFondo:false,
         pieMicrofono:false,
-        proyector:false,
+        proyectorA:false,
         puntero:false,
       pantalla:false,
     computadora:false,  
       },
       dataBajoEscenario:{
-        proyector:false,
+        proyectorB:false,
         fondoPrensa:false,
         computadora:false,
-        alargue:false,
         aireAcondicionado:false,
         cafe:false,
         aguaCaliente:false,
