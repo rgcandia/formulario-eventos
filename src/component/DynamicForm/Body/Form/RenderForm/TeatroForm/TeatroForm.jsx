@@ -207,7 +207,7 @@ dispatch(updateForm({...formData,teatro:{...formData.teatro,dataSobreEscenario:{
          type="number"
          label='Pupitres (cantidad)'
          fullWidth
-         value={formData?.teatro.dataSobreEscenario.Pupitres || ""}
+         value={formData?.teatro.dataSobreEscenario.pupitres || ""}
          onChange={handleChangeSobreEscenario}
          />
        
