@@ -148,7 +148,7 @@ label='Lugar del Evento'
 
 <Box className={styles.items}>
 <Box sx={{marginTop:'20px'}}>
-      <Typography variant='body2'><strong>SOBRE EL ESCENARIO</strong></Typography>
+      <Typography variant='body2' sx={{marginBottom:'10px'}} ><strong>SOBRE EL ESCENARIO</strong></Typography>
     <FormControlLabel
        label={<Typography variant='body2'>Tildar para completar los items necesarios sobre el escenario</Typography>}
       control={<Checkbox
@@ -159,7 +159,7 @@ label='Lugar del Evento'
     />
     {
       formData.otro.sobreEscenario &&
-      <Box sx={{display:'flex',flexDirection:'column',gap:'10px'}}>
+      <Box className={styles.sobreEscenario}>
          <TextField
          select
          name='fondoEscenario'
@@ -200,19 +200,22 @@ label='Lugar del Evento'
          value={formData.otro.dataSobreEscenario.Pupitres || ""}
          onChange={handleChangeSobreEscenario}
          />
-         <TextField
-         select
-         name='manteles'
-         label='Manteles'
+          <TextField
+         id='mantelBlanco'
+         type='number'
+         label='Mantel Blanco (cantidad)'
          fullWidth
-         defaultValue='Ninguno'
-         value={formData.otro.dataSobreEscenario.manteles || "Ninguno"}
-         onChange={handleChangeSelecFondo}
-         >
-          <MenuItem value='Azul'>Azul</MenuItem>
-          <MenuItem value='Blanco'>Blanco</MenuItem>
-          <MenuItem value='Ninguno'>Ninguno</MenuItem>
-         </TextField>
+         value={formData?.teatro.dataSobreEscenario.mantelBlanco || ""}
+         onChange={handleChangeSobreEscenario}
+         />
+              <TextField
+         id='mantelAzul'
+         type='number'
+         label='Mantel Azul (cantidad)'
+         fullWidth
+         value={formData?.teatro.dataSobreEscenario.mantelAzul || ""}
+         onChange={handleChangeSobreEscenario}
+         />
          <TextField
          id='sillas'
          type='number'
@@ -237,7 +240,8 @@ label='Lugar del Evento'
          value={formData.otro.dataSobreEscenario.microfonoInalambrico || ""}
          onChange={handleChangeSobreEscenario}
          />
-             <FormControlLabel
+         <Box sx={{width:'100%'}}>
+         <FormControlLabel
       label='Pie de micrófono'
       control={<Checkbox
       checked={formData?.otro.dataSobreEscenario.pieMicrofono || false}
@@ -245,10 +249,12 @@ label='Lugar del Evento'
       onChange={handleCheckChangeSobreEscenario}
       />}
     />
+         </Box>
+    
           <TextField
          id='lucesYPulsadores'
          type='number'
-         label='Luces y pulsadores'
+         label='Luces y pulsadores (cantidad)'
          fullWidth
          value={formData.otro.dataSobreEscenario.lucesYPulsadores || ""}
          onChange={handleChangeSobreEscenario}
@@ -256,13 +262,14 @@ label='Lugar del Evento'
            <TextField
          id='alargues'
          type='number'
-         label='Alargues(cantidad)'
+         label='Alargues (cantidad)'
          fullWidth
          value={formData.otro.dataSobreEscenario.alargues || ""}
          onChange={handleChangeSobreEscenario}
          />
-      
-          <FormControlLabel
+      <Box sx={{display:'flex',flexDirection:'column',width:'100%'}}>
+        
+      <FormControlLabel
       label='Proyector sobre escenario'
       control={<Checkbox
       checked={formData?.otro.dataSobreEscenario.proyector || false}
@@ -295,13 +302,14 @@ label='Lugar del Evento'
       onChange={handleCheckChangeSobreEscenario}
       />}
     />
+      </Box>
     
       </Box>
     }
     </Box>
 
     <Box  sx={{marginTop:'20px'}}>
-    <Typography variant="body2"><strong>BAJO EL ESCENARIO</strong></Typography>
+    <Typography variant="body2" sx={{marginBottom:'10px'}}><strong>BAJO EL ESCENARIO</strong></Typography>
     <FormControlLabel
       label={<Typography variant='body2'>Tildar para completar los items necesarios bajo el escenario</Typography>}
       control={<Checkbox
@@ -311,7 +319,7 @@ label='Lugar del Evento'
       />}
     />
     {formData.otro.bajoEscenario &&
-    <Box sx={{display:'flex',flexDirection:'column',gap:'10px'}} className={styles.bajoEscenario}>
+    <Box  className={styles.bajoEscenario}>
        <TextField
          id='pupitres'
          type='number'
@@ -360,7 +368,16 @@ label='Lugar del Evento'
          value={formData.otro.dataBajoEscenario.microfonoInalambrico || ""}
          onChange={handleChangeBajoEscenario}
          />
-          <FormControlLabel
+             <TextField
+         id='alargues'
+         type='number'
+         label='Alargues (cantidad)'
+         fullWidth
+         value={formData.otro.dataBajoEscenario.alargues || ""}
+         onChange={handleChangeBajoEscenario}
+         />
+        <Box sx={{display:'flex',flexDirection:'column',width:'100%'}}>
+        <FormControlLabel
       label='Proyector Arriba'
       control={<Checkbox
       checked={formData?.otro.dataBajoEscenario.proyector || false}
@@ -385,14 +402,14 @@ label='Lugar del Evento'
       onChange={handleCheckChangeBajoEscenario}
       />}
     />
-    <FormControlLabel
+    {/* <FormControlLabel
       label='Alargue'
       control={<Checkbox
       checked={formData?.otro.dataBajoEscenario.alargue || false}
       name='alargue'
       onChange={handleCheckChangeBajoEscenario}
       />}
-    />
+    /> */}
     <FormControlLabel
       label='Aire Acondicionado'
       control={<Checkbox
@@ -508,6 +525,7 @@ label='Lugar del Evento'
       onChange={handleCheckChangeBajoEscenario}
       />}
     />
+        </Box>
     
     <TextField
          id='sandwichesMiga'
@@ -540,6 +558,7 @@ label='Lugar del Evento'
          label='Música'
          multiline
          rows={5}
+         fullWidth
          onChange={handleChangeBajoEscenario}
          value={formData.otro.dataBajoEscenario.musica || ""}
          helperText="En el caso de canciones patrias, aclarar cuáles son y el orden.
@@ -551,6 +570,7 @@ label='Lugar del Evento'
          id='observacionesComunicaciones'
          label='Observaciones Comunicaciones'
          multiline
+         fullWidth
          rows={5}
          value={formData.otro.dataBajoEscenario.observacionesComunicaciones || ""}
          onChange={handleChangeBajoEscenario}
@@ -560,6 +580,7 @@ label='Lugar del Evento'
          id='observacionesCocina'
          label='Observaciones Cocina'
          multiline
+         fullWidth
          rows={5}
          value={formData.otro.dataBajoEscenario.observacionesCocina || ""}
          onChange={handleChangeBajoEscenario}
@@ -568,6 +589,7 @@ label='Lugar del Evento'
          id='observacionesCompras'
          label='Observaciones Compras'
          multiline
+         fullWidth
          rows={5}
          value={formData.otro.dataBajoEscenario.observacionesCompras || ""}
          onChange={handleChangeBajoEscenario}
@@ -576,6 +598,7 @@ label='Lugar del Evento'
          id='observacionesMantenimiento'
          label='Observaciones Mantenimiento'
          multiline
+         fullWidth
          rows={5}
          value={formData.otro.dataBajoEscenario.observacionesMantenimiento || ""}
          onChange={handleChangeBajoEscenario}
