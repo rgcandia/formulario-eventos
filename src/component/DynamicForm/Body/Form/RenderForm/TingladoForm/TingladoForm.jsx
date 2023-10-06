@@ -136,7 +136,7 @@ dispatch(updateForm({...formData,tinglado:{...formData.tinglado,dataSobreEscenar
 </Box>
   <Box className={styles.items}>
   <Box sx={{marginTop:'20px'}}> 
-   <Typography variant='body2'><strong>SOBRE EL ESCENARIO</strong></Typography>
+   <Typography variant='body2'  sx={{marginBottom:'10px'}}><strong>SOBRE EL ESCENARIO</strong></Typography>
     <FormControlLabel
        label={<Typography variant='body2' >Tildar para completar los items necesarios sobre el escenario</Typography>}
       control={<Checkbox
@@ -260,7 +260,7 @@ dispatch(updateForm({...formData,tinglado:{...formData.tinglado,dataSobreEscenar
     </Box>
 
     <Box sx={{marginTop:'20px'}}>
-   <Typography variant='body2' ><strong>BAJO EL ESCENARIO</strong></Typography>
+   <Typography variant='body2'  sx={{marginBottom:'10px'}}><strong>BAJO EL ESCENARIO</strong></Typography>
     <FormControlLabel
       label={<Typography variant='body2'>Tildar para completar los items necesarios bajo el escenario</Typography>}
       control={<Checkbox
@@ -359,7 +359,7 @@ dispatch(updateForm({...formData,tinglado:{...formData.tinglado,dataSobreEscenar
       label='Alargue'
       control={<Checkbox
       checked={formData?.tinglado.dataBajoEscenario.alargue || false}
-      name='alargue'
+      name='alargueB'
       onChange={handleCheckChangeBajoEscenario}
       />}
     />
