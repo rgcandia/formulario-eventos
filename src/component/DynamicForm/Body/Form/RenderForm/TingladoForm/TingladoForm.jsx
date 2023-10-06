@@ -320,6 +320,14 @@ dispatch(updateForm({...formData,tinglado:{...formData.tinglado,dataSobreEscenar
          value={formData?.tinglado.dataBajoEscenario.tarimas || ""}
          onChange={handleChangeBajoEscenario}
          />
+                 <TextField
+         id='alargues'
+         type='number'
+         label='Alargues (cantidad)'
+         fullWidth
+         value={formData?.tinglado.dataBajoEscenario.alargues || ""}
+         onChange={handleChangeBajoEscenario}
+         />
     
        <Box sx={{display:'flex',flexDirection:'column',alignItems:'flex-start',width:'100%'}}>
       <FormControlLabel
@@ -355,14 +363,7 @@ dispatch(updateForm({...formData,tinglado:{...formData.tinglado,dataSobreEscenar
       onChange={handleCheckChangeBajoEscenario}
       />}
     />
-    <FormControlLabel
-      label='Alargue'
-      control={<Checkbox
-      checked={formData?.tinglado.dataBajoEscenario.alargue || false}
-      name='alargueB'
-      onChange={handleCheckChangeBajoEscenario}
-      />}
-    />
+
    
       </Box>
 
