@@ -73,7 +73,7 @@ const {lugar} = useSelector(state=>state.data.form.home)
      </Box> }
      {currentSection !== "Home" && 
       <Box sx={{ display: 'flex', justifyContent: 'center' ,margin:'20px'}}>
-      <Button variant='outlined' onClick={()=>{handleChangeSection("Home")}}>Volver</Button>
+      <Button variant='contained' onClick={()=>{handleChangeSection("Home")}}>Guardar</Button>
     </Box>}
     </Box>
   );
